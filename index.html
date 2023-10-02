@@ -2,49 +2,108 @@
 <html class="no-js" lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Allison Truhlar's Portfolio</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Allison Truhlar's Portfolio</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
 
-  <link rel="manifest" href="site.webmanifest">
-  <!-- <link rel="apple-touch-icon" href="icon.png"> -->
-  <!-- Place favicon.ico in the root directory -->
+    <link rel="manifest" href="site.webmanifest">
+    <!-- <link rel="apple-touch-icon" href="icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
-  <meta name="theme-color" content="#fafafa">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
 
-  <!-- Add your site or application content here -->
-  <header>
-    <h1>Allison Truhlar</h1>
-    <h3>Full-stack Software Developer</h3>
-  </header>
-  <section>
-    <h2>Projects</h2>
-  </section>
-  <section>
-    <h2>About me</h2>
-    <p>
-        I am a full-stack software developer transitioning from a background in higher education and Federal program management.
-    </p>
-  </section>
-  <section>
-    <h2>Contact</h2>
-  </section>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+    <!-- Add your site or application content here -->
 
+    <div class="wave-container background-second">
+        <header class="background-first">
+            <div class="content-container">
+                <h1>Allison Truhlar</h1>
+                <h3>Full-stack Software Developer</h3>
+            </div>
+        </header>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180">
+            <path fill="#65728d" fill-opacity="1"
+                d="M0,160L80,144C160,128,320,96,480,90.7C640,85,800,107,960,106.7C1120,107,1280,85,1360,74.7L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+            </path>
+        </svg>
+        
+    </div>
+
+    <div class="wave-container background-third">
+        <section class="background-second">
+            <div class="content-container">
+                <h2>Projects</h2>
+                <div>
+                    <img src="./img/Recipe-Card.png" alt="Software Screenshot" loading="lazy" />
+                    <h3 class="projects__row-content-title">Recipe Keeper</h3>
+              <p class="projects__row-content-desc">
+                Cooking is a big part of my life. I've dreamed of making an app to save and view my online and home recipes since before I knew how to code!  
+              </p>
+                  <!-- <a 
+                    href="./recipe-keeper.html" 
+                    class="btn btn--small btn--theme-inv projects__row-content-links-btn" 
+                    >View project</a
+                  > -->
+                </div>
+            </div>
+        </section>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180"><path fill="#8a6e96" fill-opacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,58.7C1120,64,1280,96,1360,112L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
+        </svg>
+        
+        
+
+    </div>
+
+    <div class="wave-container background-fourth">
+        <section class="background-third">
+            <div class="content-container">
+                <h2>About me</h2>
+                <p>
+                    I am a full-stack software developer transitioning from a background in higher education and Federal
+                    program
+                    management.
+                </p>
+            </div>
+        </section>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180">
+            <path fill="#7b7096" fill-opacity="1"
+                d="M0,160L80,144C160,128,320,96,480,90.7C640,85,800,107,960,106.7C1120,107,1280,85,1360,74.7L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+            </path>
+        </svg>
+
+    </div>
+
+    <section class="background-fourth">
+        <div class="content-container">
+            <h2>Contact</h2>
+        </div>
+    </section>
+
+
+    <footer>
+        Built by Allison Truhlar | 2023
+    </footer>
+
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
