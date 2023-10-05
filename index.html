@@ -19,7 +19,8 @@
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
@@ -29,76 +30,152 @@
 
 <body>
 
-    <!-- Add your site or application content here -->
+    <nav>
+        <p>Menu</p>
+    </nav>
 
-    <div class="wave-container background-second">
-        <header class="background-first">
-            <div class="content-container">
-                <h1>Allison Truhlar</h1>
-                <h3>Full-stack Software Developer</h3>
-            </div>
-        </header>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180">
-            <path fill="#65728d" fill-opacity="1"
-                d="M0,160L80,144C160,128,320,96,480,90.7C640,85,800,107,960,106.7C1120,107,1280,85,1360,74.7L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
-            </path>
+    <div class="hero">
+        <div class="display-container">
+            <header>
+                <h1 class="heading-white-underline">Allison Truhlar</h1>
+                <p>Full-Stack Software Developer</p>
+            </header>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon fill="#3F4E85" points="0,100 100,0 100,100" />
         </svg>
-        
-    </div>
+    </div class="hero">
 
-    <div class="wave-container background-third">
-        <section class="background-second">
-            <div class="content-container">
-                <h2>Projects</h2>
-                <div>
-                    <img src="./img/Recipe-Card.png" alt="Software Screenshot" loading="lazy" />
-                    <h3 class="projects__row-content-title">Recipe Keeper</h3>
-              <p class="projects__row-content-desc">
-                Cooking is a big part of my life. I've dreamed of making an app to save and view my online and home recipes since before I knew how to code!  
-              </p>
-                  <!-- <a 
-                    href="./recipe-keeper.html" 
-                    class="btn btn--small btn--theme-inv projects__row-content-links-btn" 
-                    >View project</a
-                  > -->
+    <main>
+        <section class="about-section display-container">
+            <div class="about-section-header-container">
+                <h2 class="section-header">About Me</h2>
+                <img class="headshot" src="./assets/img/Allison-Truhlar-headshot.png" />
+            </div>
+            <p class="section-content">I am a full-stack software developer transitioning from a background in
+                environmental science research, teaching in higher ed, and Federal program management. The river above
+                is symbolic of the braided river that career paths can take.</p>
+        </section>
+
+        <section class="display-container">
+            <h2 class="section-header">My Skills</h2>
+            <div class="section-content">
+                <div class="skills-wrapper">
+                    <div class="skill-item">
+                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios/50/html-5--v2.png" alt="html-5--v2"/>
+                        <p>HTML5</p>
+                    </div>
+                    <div class="skill-item">
+                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios/50/css3.png" alt="css3"/>
+                        <p>CSS3</p>
+                    </div>
+                    <div class="skill-item">
+                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios/50/javascript--v1.png" alt="javascript--v1"/>
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="skill-item">
+                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios-glyphs/60/react.png" alt="react"/>
+                        <p>React</p>
+                    </div>
+                    <div class="skill-item">
+                        <img width="50" height="50" src="https://img.icons8.com/ffffff/windows/64/node-js.png" alt="node-js"/>
+                        <p>NodeJS</p>
+                    </div>
+                    <div class="skill-item">
+                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios/50/express-js.png" alt="express-js"/>
+                        <p>Express</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./assets/icons/icons8-mongodb-48.png"/>
+                        <p>MongoDB</p>
+                    </div>
+                    <div class="skill-item">
+                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios-glyphs/60/github.png" alt="github"/>
+                        <p>GitHub</p>
+                    </div>
+                    <div class="skill-item">
+                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios/50/where.png" alt="where"/>
+                        <p>Next?</p>
+                    </div>
                 </div>
             </div>
         </section>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180"><path fill="#8a6e96" fill-opacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,58.7C1120,64,1280,96,1360,112L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
-        </svg>
-        
-        
 
-    </div>
+        <section class="display-container">
+            <h2 class="section-header">Projects</h2>
 
-    <div class="wave-container background-fourth">
-        <section class="background-third">
-            <div class="content-container">
-                <h2>About me</h2>
-                <p>
-                    I am a full-stack software developer transitioning from a background in higher education and Federal
-                    program
-                    management.
-                </p>
+            <div class="project-card">
+
+                <div class="project-card-img-container">
+                    <!-- <img src="./assets/img/Recipe-Card.png"> -->
+                </div>
+
+                <div class="project-card-description-container">
+                    <div>
+                        <h3>Recipe Keeper</h3>
+                        <p class="section-content">Save online recipes using a URL. Search saved recipes by ingredient.</p>
+                    </div>
+                    <div class="project-card-skill-container">
+                        <div class="skill-tag"><p>React</p></div>
+                        <div class="skill-tag"><p>NodeJS</p></div>
+                        <div class="skill-tag"><p>Express</p></div>
+                        <div class="skill-tag"><p>MongoDB</p></div>
+                    </div>
+                    <a class="project-link" href="#">Learn More</a>
+                </div>
             </div>
         </section>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180">
-            <path fill="#7b7096" fill-opacity="1"
-                d="M0,160L80,144C160,128,320,96,480,90.7C640,85,800,107,960,106.7C1120,107,1280,85,1360,74.7L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
-            </path>
-        </svg>
+    </main>
 
+    <div class="contact">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon fill="#3F4E85" points="0,0 100,0 100,100" />
+        </svg>
+        <section class="display-container">
+        <h2 class="heading-white-underline">Contact</h2>
+
+        <p class="section-content">If you think I'm a good fit for an open position or you just want to say hello, send a message! I look forward to hearing from you.</p>
+
+        <form name="contact" method="POST" data-netlify="true">
+
+            <label for="name">Name</label>
+            <input 
+                id="name" 
+                name="name" 
+                required 
+                aria-required="true" 
+                type="text" 
+                placeholder="Name"
+            />
+
+            <label for="email">Email</label>
+            <input 
+                id="email" 
+                name="email" 
+                required 
+                aria-required="true" 
+                type="email" 
+                placeholder="Email"
+            />
+
+            <label for="message">Message</label>
+            <textarea
+                id="message"
+                required
+                aria-required="true"
+            > 
+            </textarea>
+
+            <button type="submit">Send message</button>
+
+        </form>
+            
+    </section>
     </div>
 
-    <section class="background-fourth">
-        <div class="content-container">
-            <h2>Contact</h2>
-        </div>
-    </section>
-
-
     <footer>
-        Built by Allison Truhlar | 2023
+        <p>Built by Allison Truhlar | 2023</p>
+        <p>Icons by <a href="https://icons8.com">Icons8</a></p> 
     </footer>
 
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>

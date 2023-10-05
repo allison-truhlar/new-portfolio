@@ -11,7 +11,8 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html, body {
+html,
+body {
   font-size: 1em;
   line-height: 1.4;
 }
@@ -85,72 +86,331 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-   *,*::before,*::after {
-    box-sizing: border-box;
-  }
-  html{
-    height: 100%;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  body{
-    min-height: 100%;
-    margin: 0;
-    color: #ffffff;
-    font-family: 'Raleway', sans-serif;
-    letter-spacing: 1px;
-  }
+html {
+  height: 100%;
+}
 
-  img {
-    display: block;
-    width: 100%;
-    margin: auto;
-  }
+body {
+  min-height: 100%;
+  margin: 0;
+  background-color: #3F4E85;
+  color: #ffffff;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.015rem;
+}
 
-  header, section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  h1, h2, h3, p{
-    margin: 0;
-  }
+img {
+  display: block;
+  margin: auto;
+}
 
-  h1, h2, h3{
-    text-transform: uppercase;
-    padding: 1em 0 1em 0;
-  }
+nav {
+  position: relative;
+}
 
-  .content-container{
-    width: 80%;
-    max-width: 900px;
-  }
+/* Establish center content alignment with responsive edge width */
+.hero,
+main,
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .background-first{
-    background-color: #65728d;
-  }
-  .background-second{
-    background-color: #8a6e96;
-  }
+.display-container {
+  width: 85%;
+}
 
-  .background-third{
-    background-color: #7b7096;
-  }
+/* Hero styles */
+.hero {
+  position: relative;
+  background: url("/assets/img/edited-river-pic.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
 
-  .background-fourth{
-    background-color: #6f7293;
-  }
-  /* .wave-container{
-    border: 1px red solid;
-  } */
-  .wave-container > svg {
-    display: block;
-  }
+.hero::before {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2E3141;
+  mix-blend-mode: soft-light;
+}
 
-  footer{
-    background: black;
-    text-align: center;
-  }
+/* https://stackoverflow.com/questions/32641377/how-to-use-mix-blend-mode-but-not-have-it-affect-child-elements */
+
+.hero>svg {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 35%;
+}
+
+/* https://awik.io/diagonal-borders-css-svg/ */
+
+
+
+header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 5.75rem 0 7rem 0;
+}
+
+.heading-white-underline {
+  margin: 0 0 0.4rem 0;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-bottom: #ffffff 2px solid;
+}
+
+p {
+  margin: 0;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Uniform section styles */
+section {
+  margin-top: 3rem;
+}
+
+.section-header {
+  margin: 0;
+  padding-bottom: 2rem;
+  font-size: 1.375rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: underline solid #6371A3 2px;
+  text-underline-offset: 0.6rem;
+}
+
+.section-content {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+/* About section styles */
+
+.about-section-header-container {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.headshot {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+}
+
+/* Override default section header and section content spacing */
+/* This is needed because of the flex box that contains both the 
+section headline and the headshot. Adding padding to the section-header
+results in it being out of line with the headshot */
+.about-section .section-header {
+  padding-bottom: 0;
+}
+
+.about-section .section-content {
+  padding-top: 2rem;
+}
+
+/* Skill section styles */
+
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  /* border: 1px solid red; */
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px orange solid; */
+}
+
+.skill-item p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Project section styles */
+.project-card {
+  width: 100%;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #4C5C96;
+}
+
+.project-card-img-container {
+  height: 50%;
+  width: 100%;
+  background-image: url("../assets/img/Recipe-Card.png");
+  background-size: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+.project-card-description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50%;
+  max-width: 80%;
+  padding: 1.25rem 0;
+}
+
+.project-card-description-container h3 {
+  margin: 0;
+  padding: 0 0 0.6rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: underline solid #6371A3 2px;
+  text-underline-offset: 0.4rem;
+}
+
+.project-card-skill-container {
+  display: flex;
+  gap: 8px;
+}
+
+.skill-tag {
+  display: flex;
+  width: 4rem;
+  height: 1.4rem;
+  background: white;
+  border-radius: 10px;
+}
+
+.skill-tag>p {
+  margin: auto;
+  color: #4C5C96;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.project-link {
+  align-self: flex-start;
+  border-radius: 6.25rem;
+  border: 1px solid #FFF;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+}
+
+.project-link:hover, 
+.project-link:focus {
+  background: #3F4E85 20%;
+}
+
+/* Contact styles */
+
+.contact {
+  position: relative;
+  margin-top: 3rem;
+  background: url("/assets/img/Glacier-Natl-Park.jpg");
+  background-size: auto 185%;
+  background-repeat: no-repeat;
+  background-position: top 20% left;
+}
+
+.contact::before {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  mix-blend-mode: soft-light;
+}
+
+
+.contact>svg{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 6rem;
+}
+
+.contact .heading-white-underline{
+  margin-top: 4rem;
+  display: inline-block;
+}
+
+.contact .section-content{
+  margin: 1rem 0 2rem 0;
+  font-weight: 600;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+form label {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase; 
+}
+
+form input,
+form textarea {
+  display: block;
+  width: 100%;
+  border-radius: 0.3125rem;
+  border: 2px solid #FFF;
+  background: none; 
+  margin: 0.8rem 0 1.75rem 0;
+  color: white;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+
+button{
+  margin: 0.8rem 0 3rem 0;
+border-radius: 6.25rem;
+border: 2px solid #FFF; 
+background:none;
+padding: 0.75rem 1.5rem;
+  color: #FFF;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+font-size: 0.875rem;
+font-weight: 800;
+letter-spacing: 1px;
+text-transform: uppercase; 
+}
+
 
 
 /* ==========================================================================
