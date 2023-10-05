@@ -128,15 +128,18 @@ main,
 }
 
 /* Hero styles */
-.hero {
+.hero{
   position: relative;
+}
+
+.home-hero {
   background: url("/assets/img/edited-river-pic.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 
-.hero::before {
+.home-hero::before {
   content: "";
   display: block;
   height: 100%;
@@ -147,6 +150,8 @@ main,
   background-color: #2E3141;
   mix-blend-mode: soft-light;
 }
+
+
 
 /* https://stackoverflow.com/questions/32641377/how-to-use-mix-blend-mode-but-not-have-it-affect-child-elements */
 
@@ -335,16 +340,19 @@ results in it being out of line with the headshot */
 
 /* Contact styles */
 
-.contact {
+.contact{
   position: relative;
   margin-top: 3rem;
+}
+
+.home-contact {
   background: url("/assets/img/Glacier-Natl-Park.jpg");
   background-size: auto 185%;
   background-repeat: no-repeat;
   background-position: top 20% left;
 }
 
-.contact::before {
+.home-contact::before {
   content: "";
   display: block;
   height: 100%;
@@ -355,7 +363,6 @@ results in it being out of line with the headshot */
   background-color: #000;
   mix-blend-mode: soft-light;
 }
-
 
 .contact>svg{
   width: 100%;
@@ -370,7 +377,7 @@ results in it being out of line with the headshot */
   display: inline-block;
 }
 
-.contact .section-content{
+.home-contact .section-content{
   margin: 1rem 0 2rem 0;
   font-weight: 600;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -397,20 +404,78 @@ form textarea {
   font-size: 0.875rem;
 }
 
-button{
+.msg-btn{
   margin: 0.8rem 0 3rem 0;
-border-radius: 6.25rem;
-border: 2px solid #FFF; 
-background:none;
-padding: 0.75rem 1.5rem;
+  border-radius: 6.25rem;
+  border: 2px solid #FFF; 
+  background:none;
+  padding: 0.75rem 1.5rem;
   color: #FFF;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-font-size: 0.875rem;
-font-weight: 800;
-letter-spacing: 1px;
-text-transform: uppercase; 
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
+/* Footer */
+
+footer{
+  text-align: center;
+  padding: 0.4rem;
+}
+
+footer>p{
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+footer a{
+  color: white;
+}
+
+/* Project page */
+.project-hero{
+  padding-bottom: 2rem;
+  background-color: #2E3141;
+}
+
+.project-page-img{
+  margin-top: 3rem;
+  width: 100%;
+  height: 60vw;
+  border-radius: 5px;
+  background-image: url("../assets/img/Recipe-Card.png");
+  background-size: cover;
+}
+
+.project-section-header{
+  margin-bottom: 2rem;
+  padding-bottom: 0.6rem;
+  text-decoration: none;
+  border-bottom: solid #6371A3 2px;
+}
+
+.project-contact{
+  background-color: #2E3141;
+}
+
+.project-contact .section-content{
+  margin: 1rem 0 2rem 0;
+}
+
+.project-contact-header{
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.6rem;
+  text-decoration: none;
+  border-bottom: solid #6371A3 2px;
+}
+
+.project-msg-btn{
+  display: flex;
+}
 
 
 /* ==========================================================================
