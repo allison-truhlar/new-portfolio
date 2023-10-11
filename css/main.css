@@ -110,10 +110,6 @@ img {
   margin: auto;
 }
 
-nav {
-  position: relative;
-}
-
 /* Establish center content alignment with responsive edge width */
 .hero,
 main,
@@ -125,6 +121,21 @@ main,
 
 .display-container {
   width: 85%;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #3F4E85;
+  color: white;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  top: -60px;
+  transition: top 0.3s;
+}
+
+.navbar.show {
+  top: 0;
 }
 
 /* Hero styles */
