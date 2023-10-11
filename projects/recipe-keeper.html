@@ -30,21 +30,46 @@
 
 <body>
 
-    <nav>
-        <p>Menu</p>
-    </nav>
-
-    <div class="project-hero hero">
+    <header>
         <div class="display-container">
-            <header>
+            <nav class="nav-bar">
+                <ul class="nav-bar-link-container nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html/#about">About</a></li>
+                    <li><a href="../index.html/#projects">Projects</a></li>
+                    <li><a href="../index.html/#contact">Contact</a></li>
+                </ul>
+            </nav>
+    
+            <div id="menu-btn" class="menu-btn">
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+            </div>
+    
+            <nav id="nav-dropdown" class="nav-dropdown display-container">
+                <ul class="nav-dropdown-link-container nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html/#about">About</a></li>
+                    <li><a href="../index.html/#projects">Projects</a></li>
+                    <li><a href="../index.html/#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="project-hero hero">
+        <div class="display-container">
+            <div class="hero-text">
                 <h1 class="heading-white-underline">Recipe Keeper</h1>
                 <p>Description of the recipe keeper app</p>
-            </header>
+            </div>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="#3F4E85" points="0,100 100,0 100,100" />
         </svg>
-    </div>
+    </section>
 
     <main>
         <div class="display-container">
@@ -86,9 +111,7 @@
             <p>Icons by <a href="https://icons8.com">Icons8</a></p>
         </footer>
 
-        <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="../index.js"></script>
 </body>
 
 </html>

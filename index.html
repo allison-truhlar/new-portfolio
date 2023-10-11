@@ -30,34 +30,48 @@
 
 <body>
 
-    <nav class="navbar" id="navbar">
-        <ul>
-            <li>
-                <a href="./index.html">Home</a>
-            </li>
-            <li>
-                <a href="./index.html/#about">About</a>
-            </li>
-            <li>
-                <a href="./index.html/#projects">Projects</a>
-            </li>
-            <li>
-                <a href="./index.html/#contact">Contact</a>
-            </li>
-        </ul>
-    </nav>
-
-    <div class="home-hero hero">
+    <header>
         <div class="display-container">
-            <header>
+            <nav class="nav-bar ">
+                <ul class="nav-bar-link-container nav-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./index.html/#about">About</a></li>
+                    <li><a href="./index.html/#projects">Projects</a></li>
+                    <li><a href="./index.html/#contact">Contact</a></li>
+                </ul>
+            </nav>
+    
+            <div id="menu-btn" class="menu-btn">
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+            </div>
+    
+            <nav id="nav-dropdown" class="nav-dropdown display-container">
+                <ul class="nav-dropdown-link-container nav-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./index.html/#about">About</a></li>
+                    <li><a href="./index.html/#projects">Projects</a></li>
+                    <li><a href="./index.html/#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+
+    <section class="home-hero hero">
+        <div class="display-container">
+            <div class="hero-text">
                 <h1 class="heading-white-underline">Allison Truhlar</h1>
                 <p>Full-Stack Software Developer</p>
-            </header>
+            </div>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="#3F4E85" points="0,100 100,0 100,100" />
         </svg>
-    </div>
+    </section>
 
     <main>
         <section id="about" class="about-section display-container">
@@ -173,7 +187,8 @@
                 <input id="email" name="email" required aria-required="true" type="email" placeholder="Email" />
 
                 <label for="message">Message</label>
-                <textarea id="message" name="message" required aria-required="true" placeholder="Your message here..."></textarea>
+                <textarea id="message" name="message" required aria-required="true"
+                    placeholder="Your message here..."></textarea>
 
                 <button class="msg-btn" type="submit">Send message</button>
 
@@ -187,9 +202,8 @@
         <p>Icons by <a href="https://icons8.com">Icons8</a></p>
     </footer>
 
-    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="./index.js"></script>
+
 </body>
 
 </html>

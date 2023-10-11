@@ -111,6 +111,7 @@ img {
 }
 
 /* Establish center content alignment with responsive edge width */
+header,
 .hero,
 main,
 .contact {
@@ -124,23 +125,72 @@ main,
 }
 
 /* Navbar styles */
-.navbar {
-  background-color: #3F4E85;
-  color: white;
-  padding: 15px;
-  position: fixed;
-  width: 100%;
-  top: -60px;
-  transition: top 0.3s;
+header .display-container{
+  display: flex;
+  flex-direction: column;
 }
 
-.navbar.show {
-  top: 0;
+.nav-bar,
+.nav-dropdown{
+  display: flex;
+  justify-content: flex-end;
 }
+
+.nav-bar-link-container{
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  padding-block: 0.5rem;
+}
+
+.nav-links{
+  list-style-type: none;
+}
+
+.nav-links a{
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav-links a:hover {
+  text-decoration: underline solid #6371A3 4px;
+  text-underline-offset: 0.3rem;
+} 
+
+.menu-btn {
+  display: none;
+  align-self: flex-end;
+  flex-direction: column;
+  cursor: pointer;
+  padding-block: 0.5rem;
+}
+
+.btn-line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.nav-dropdown {
+  display: none;
+  width: 100%;
+}
+
+.nav-dropdown>.nav-dropdown-link-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
 
 /* Hero styles */
 .hero{
   position: relative;
+  margin: 0;
 }
 
 .home-hero {
@@ -148,6 +198,7 @@ main,
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
+  margin: 0;
 }
 
 .home-hero::before {
@@ -160,6 +211,7 @@ main,
   width: 100%;
   background-color: #2E3141;
   mix-blend-mode: soft-light;
+  margin: 0;
 }
 
 
@@ -169,16 +221,18 @@ main,
 .hero>svg {
   width: 100%;
   position: absolute;
-  bottom: 0;
+  display: block;
+  bottom: -0.1px;
   right: 0;
   height: 35%;
+  margin: 0;
 }
 
 /* https://awik.io/diagonal-borders-css-svg/ */
 
 
 
-header {
+.hero-text {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -483,6 +537,29 @@ footer a{
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
+   /* Tablets and smaller, max width of 768px */
+   @media (max-width: 768px) {
+
+    .nav-bar{
+      display: none;
+    }
+  
+    .menu-btn {
+      display: flex;
+    }
+  
+    .change .btn-line:nth-child(1) {
+      transform: rotate(-45deg) translate(-7px, 6px);
+    }
+  
+    .change .btn-line:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .change .btn-line:nth-child(3) {
+      transform: rotate(45deg) translate(-6px, -6px);
+    }
+   }
+
+
+  
