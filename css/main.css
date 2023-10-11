@@ -175,12 +175,11 @@ header .display-container{
 }
 
 .nav-dropdown {
-  display: none;
   width: 100%;
 }
 
 .nav-dropdown>.nav-dropdown-link-container{
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-end;
   gap: 1rem;
@@ -329,7 +328,14 @@ results in it being out of line with the headshot */
 }
 
 /* Project section styles */
+.project-cards-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
 .project-card {
+  margin: 0 0 2rem 0;
   width: 100%;
   height: 420px;
   display: flex;
@@ -540,6 +546,8 @@ footer a{
    /* Tablets and smaller, max width of 768px */
    @media (max-width: 768px) {
 
+    /* navbar */
+
     .nav-bar{
       display: none;
     }
@@ -558,6 +566,11 @@ footer a{
   
     .change .btn-line:nth-child(3) {
       transform: rotate(45deg) translate(-6px, -6px);
+    }
+
+    /* project cards */
+    .project-cards-wrapper{
+      display: block;
     }
    }
 
