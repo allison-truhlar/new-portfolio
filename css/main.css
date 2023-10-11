@@ -346,22 +346,9 @@ results in it being out of line with the headshot */
 }
 
 .home-contact {
-  background: url("/assets/img/Glacier-Natl-Park.jpg");
+  background: url("/assets/img/Glacier-Natl-Park.jpg") #9f9f9f left 0% top 20% no-repeat;
+  background-blend-mode: color-burn;
   background-size: auto 185%;
-  background-repeat: no-repeat;
-  background-position: top 20% left;
-}
-
-.home-contact::before {
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #000;
-  mix-blend-mode: soft-light;
 }
 
 .contact>svg{
@@ -402,6 +389,7 @@ form textarea {
   color: white;
   padding: 0.5rem;
   font-size: 0.875rem;
+  font-family: inherit;
 }
 
 .msg-btn{
