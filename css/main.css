@@ -196,7 +196,7 @@ header .display-container{
   background: url("/assets/img/edited-river-pic.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: 0% 75%;
   margin: 0;
 }
 
@@ -514,6 +514,10 @@ footer a{
   padding-bottom: 0.6rem;
   text-decoration: none;
   border-bottom: solid #6371A3 2px;
+}
+
+.project-section-content{
+  margin-bottom: 1rem;
 }
 
 .project-contact{

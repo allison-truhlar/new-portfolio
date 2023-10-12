@@ -63,7 +63,7 @@
         <div class="display-container">
             <div class="hero-text">
                 <h1 class="heading-white-underline">Recipe Keeper</h1>
-                <p>Description of the recipe keeper app</p>
+                <p>My recipe keeper app allows the user to populate and save recipe cards by either providing a URL or manually inputting recipe information.</p>
             </div>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -77,17 +77,52 @@
             </div>
 
             <section>
-                <h2 class="project-section-header section-header">Section header</h2>
-                <p class="section-content">I am a full-stack software developer transitioning from a background in
-                    environmental science research, teaching in higher ed, and Federal program management. The river above
-                    is symbolic of the braided river that career paths can take.</p>
+                <h2 class="project-section-header section-header">Project Overview</h2>
+                <p class="project-section-content section-content">I cook almost every day for my family. I have a lot of online recipes bookmarked and some favorite recipes I refer to from cookbooks or pieces of paper. I often wish I could search all these recipes by ingredient and access them all easily from one convenient place.
+                </p>
+                <p class="project-section-content section-content">
+                    <strong>Problem Statement:</strong> As a home cook, I need to be able to easily search all my favorite recipes in one place, to find recipes that use a specific ingredient. 
+
+                </p>
+                <p class="project-section-content section-content">
+                    <strong>Use Cases:</strong><br> 
+                    1.	The user can manually save and delete recipes from a collection.<br>
+                    2.	The user can import online recipes that utilize the standard Recipe Schema and have the recipe name, URL, ingredients, and instructions automatically parsed and saved by the app.<br>
+                    3.	The user can view recipes in-app, and link out to the original recipe.<br>
+                    4.	In progress: The user can search their recipe collection by ingredient(s).
+                  </p>
             </section>
 
             <section>
-                <h2 class="project-section-header section-header">Section header</h2>
-                <p class="section-content">I am a full-stack software developer transitioning from a background in
-                    environmental science research, teaching in higher ed, and Federal program management. The river above
-                    is symbolic of the braided river that career paths can take.</p>
+                <h2 class="project-section-header section-header">Challenges and Lessons</h2>
+                <p class="project-section-content section-content">
+                    <strong>Parsing recipe data:</strong> This was the primary functionality I wanted for my app: for the user to be able to input a URL, and have the recipe name, ingredients, and instructions parsed and automatically populated into the app.
+                  </p> 
+                  <p class="project-section-content section-content">
+                    The way I went about solving this was by leveraging the standard Recipe Schema Markup adopted by Google. I learned that search engines utilize schema markup, or structured data, provided by websites to provide additional useful informaiton to users. For example, when you search for a recipe on Google, you will often see suggested recipe cards appear at the top of the results page. These cards contain some abbreviated information about each recipe - e.g., a picture, title, cooking time, and ingredients. These data come from the Recipe Schema Markup for each recipe.
+                  </p>
+                  <p class="project-section-content section-content">
+                    I accessed the Recipe Schema Markup through two steps: first, using Axios to fetch the HTML document for the URL provided by the user. Then, I used a package called Cheerio to parse the document, returning only the Recipe Schema Markup, which is contaned within a script tag of <code>type="application/ld+json"</code>. JSON-LD is the format for schema markup preferred by Google.
+                  </p>
+                  <p class="project-section-content section-content">
+                    Once I extracted the Recipe Schema Markup from the HTML document, since the format is JSON-LD, I could parse it with JSON.parse() and then access the data as I would for any other JSON data. I first found the object that contained the recipe data I was interested in, and then used key names to access the values of different properties (e.g., ingredients, instructions) in the object. These data could then be added to the app database as a recipe, just like the manually inputted recipe data.
+                  </p>
+            </section>
+
+            <section>
+                <h2 class="project-section-header section-header">View Project</h2>
+              <a
+                href="https://recipe-keeper-app.netlify.app"
+                class="project-link"
+                target="_blank"
+                >Live App</a
+              >
+              <a
+                href="https://github.com/allison-truhlar/recipe-app"
+                class="project-link"
+                target="_blank"
+                >Source Code</a
+              >
             </section>
            
         </div>
