@@ -114,6 +114,7 @@ img {
 /* Establish center content alignment with responsive edge width */
 header,
 .hero,
+.background-fade-container,
 main,
 .contact {
   display: flex;
@@ -136,7 +137,7 @@ main,
 .appear.inview {
   opacity: 1;
   transform: none;
-  transition-delay: 0.3s;
+  transition-delay: 2.5s;
 }
 
 
@@ -228,9 +229,6 @@ header .display-container{
   mix-blend-mode: soft-light;
   margin: 0;
 }
-
-
-
 /* https://stackoverflow.com/questions/32641377/how-to-use-mix-blend-mode-but-not-have-it-affect-child-elements */
 
 .hero>svg {
@@ -242,10 +240,11 @@ header .display-container{
   height: 35%;
   margin: 0;
 }
-
 /* https://awik.io/diagonal-borders-css-svg/ */
 
-
+.background-fade-container{
+  width:100%;
+}
 
 .hero-text {
   position: relative;
@@ -270,6 +269,81 @@ p {
   font-size: 0.9rem;
   font-weight: 400;
 }
+
+.fade-in{
+  opacity: 0;
+  animation: 1s forwards fadeIn;
+  -webkit-animation: 1s forwards fadeIn;
+  -moz-animation: 1s forwards fadeIn;
+  -o-animation: 1s forwards fadeIn;
+  -ms-animation: 1s forwards fadeIn;
+}
+
+.background-fade-in{
+  background-color: #2E3141;
+  animation: 1s forwards backgroundFadeIn;
+  -moz-animation: 1s forwards backgroundFadeIn;
+}
+
+
+.delay-0{
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+}
+
+.delay-1{
+  animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  -ms-animation-delay: 1s;
+}
+
+.delay-2{
+  animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  -o-animation-delay: 2s;
+  -ms-animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes backgroundFadeIn{
+  from {background-color: #2E3141;}
+  to {background-color: transparent;}
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes backgroundFadeIn{
+  from {background-color: #2E3141;}
+  to {background-color: transparent;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
 
 /* Uniform section styles */
 section {
@@ -592,6 +666,12 @@ code {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+/* Smooth scrolling to a link: https://www.smashingmagazine.com/2021/07/dynamic-header-intersection-observer/ */
+   @media (prefers-reduced-motion: no-preference) {
+    .scroller {
+      scroll-behavior: smooth;
+    }
+  }
 
    /* Tablets and smaller, max width of 768px */
    @media (max-width: 768px) {
