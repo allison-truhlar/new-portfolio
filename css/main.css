@@ -125,6 +125,21 @@ main,
   width: 85%;
 }
 
+/* Appear */
+.appear {
+  transition: all 0.8s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Added when div with appear class comes in view in the browser */
+.appear.inview {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.3s;
+}
+
+
 /* Navbar styles */
 header .display-container{
   display: flex;
