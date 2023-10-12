@@ -73,30 +73,35 @@
 
     <main>
         <div class="display-container">
-            <div class="project-page-img">
-            </div>
+            <div class="project-page-img"></div>
 
             <section>
                 <h2 class="project-section-header section-header">Project Overview</h2>
                 <p class="project-section-content section-content">I cook almost every day for my family. I have a lot of online recipes bookmarked and some favorite recipes I refer to from cookbooks or pieces of paper. I often wish I could search all these recipes by ingredient and access them all easily from one convenient place.
                 </p>
+                <h3>Problem Statement</h3>
+                <p class="project-section-content section-content">As a home cook, I need to be able to easily search all my favorite recipes in one place, to find recipes that use a specific ingredient. 
+                </p>
+                <h3>Use Cases:</h3> 
                 <p class="project-section-content section-content">
-                    <strong>Problem Statement:</strong> As a home cook, I need to be able to easily search all my favorite recipes in one place, to find recipes that use a specific ingredient. 
-
+                    <span class="bold">1.</span> The user can manually save and delete recipes from a collection.
                 </p>
                 <p class="project-section-content section-content">
-                    <strong>Use Cases:</strong><br> 
-                    1.	The user can manually save and delete recipes from a collection.<br>
-                    2.	The user can import online recipes that utilize the standard Recipe Schema and have the recipe name, URL, ingredients, and instructions automatically parsed and saved by the app.<br>
-                    3.	The user can view recipes in-app, and link out to the original recipe.<br>
-                    4.	In progress: The user can search their recipe collection by ingredient(s).
-                  </p>
+                    <span class="bold">2.</span> The user can import online recipes that utilize the standard Recipe Schema and have the recipe name, URL, ingredients, and instructions automatically parsed and saved by the app.
+                </p>
+                <p class="project-section-content section-content">
+                    <span class="bold">3.</span> The user can view recipes in-app, and link out to the original recipe.
+                </p>
+                <p class="project-section-content section-content">
+                    <span class="bold">4.</span> In progress: The user can search their recipe collection by ingredient(s).
+                </p>
             </section>
 
             <section>
                 <h2 class="project-section-header section-header">Challenges and Lessons</h2>
+                <h3>Parsing recipe data</h3> 
                 <p class="project-section-content section-content">
-                    <strong>Parsing recipe data:</strong> This was the primary functionality I wanted for my app: for the user to be able to input a URL, and have the recipe name, ingredients, and instructions parsed and automatically populated into the app.
+                    This was the primary functionality I wanted for my app: for the user to be able to input a URL, and have the recipe name, ingredients, and instructions parsed and automatically populated into the app.
                   </p> 
                   <p class="project-section-content section-content">
                     The way I went about solving this was by leveraging the standard Recipe Schema Markup adopted by Google. I learned that search engines utilize schema markup, or structured data, provided by websites to provide additional useful informaiton to users. For example, when you search for a recipe on Google, you will often see suggested recipe cards appear at the top of the results page. These cards contain some abbreviated information about each recipe - e.g., a picture, title, cooking time, and ingredients. These data come from the Recipe Schema Markup for each recipe.
