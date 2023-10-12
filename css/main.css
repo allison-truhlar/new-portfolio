@@ -103,6 +103,7 @@ body {
   color: #ffffff;
   font-family: 'Raleway', sans-serif;
   letter-spacing: 0.015rem;
+  line-height: 1.5;
 }
 
 img {
@@ -276,6 +277,16 @@ section {
   font-weight: 300;
 }
 
+h3 {
+  margin: 0;
+  padding: 0 0 0.6rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: underline solid #6371A3 2px;
+  text-underline-offset: 0.4rem;
+}
+
 /* About section styles */
 
 .about-section-header-container {
@@ -336,6 +347,7 @@ results in it being out of line with the headshot */
 
 .project-card {
   margin: 0 0 2rem 0;
+  padding: 0.75rem;
   width: 100%;
   height: 420px;
   display: flex;
@@ -346,11 +358,16 @@ results in it being out of line with the headshot */
 }
 
 .project-card-img-container {
+  display: flex;
   height: 50%;
-  width: 100%;
-  background-image: url("../assets/img/Recipe-Card.png");
-  background-size: cover;
+  width: 80%;
   border-radius: 5px 5px 0 0;
+  /* border: 1px solid red; */
+}
+
+.project-card-img-container>img{
+  max-width: 100%;
+  display: flex;
 }
 
 .project-card-description-container {
@@ -359,17 +376,11 @@ results in it being out of line with the headshot */
   justify-content: space-between;
   height: 50%;
   max-width: 80%;
-  padding: 1.25rem 0;
+  padding: 1rem 0;
 }
 
-.project-card-description-container h3 {
-  margin: 0;
-  padding: 0 0 0.6rem 0;
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-decoration: underline solid #6371A3 2px;
-  text-underline-offset: 0.4rem;
+.project-card-description-container h3{
+  padding:0;
 }
 
 .project-card-skill-container {
@@ -538,6 +549,19 @@ footer a{
 
 .project-msg-btn{
   display: flex;
+}
+
+.bold{
+  font-weight: 600;
+}
+
+code {
+  background-color: #6371A3;
+  color: #fff;
+  border-radius: 1px;
+  padding: 1px 3px;
+  white-space: nowrap;
+  font-size: inherit;
 }
 
 
