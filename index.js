@@ -21,9 +21,9 @@ menuBtn.addEventListener('click', () => {
 
 // Code to watch for when a div with class home-appear enters the screen
 // Following this article: https://dev.to/miacan2021/fade-in-animation-on-scroll-with-intersectionobserver-vanilla-js-4p27
-const homeAppearItems = document.querySelectorAll('.home-appear');
+const appearItems = document.querySelectorAll('.appear');
 
-const delayHomeAppearCallback = function (entries) {
+const delayAppearCallback = function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('delay-inview');
@@ -33,7 +33,7 @@ const delayHomeAppearCallback = function (entries) {
     });
 }
 
-const homeAppearCallback = function (entries) {
+const appearCallback = function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('inview');
@@ -43,43 +43,25 @@ const homeAppearCallback = function (entries) {
     });
 }
 
-const delayHomeSectionsObserver = new IntersectionObserver(delayHomeAppearCallback);
-const homeSectionsObserver = new IntersectionObserver(homeAppearCallback);
+const delayHomeSectionsObserver = new IntersectionObserver(delayAppearCallback);
+const sectionsObserver = new IntersectionObserver(appearCallback, { threshold: 0.2 });
 
-// Check if home-hero class exists before using homeHeroObserver
 const homeHero = document.querySelector(".home-hero");
+
 if (homeHero) {
     const homeCallback = function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                console.log("Home hero is intersecting the viewport");
-                for (let i = 0; i < homeAppearItems.length; i++) {
-                    delayHomeSectionsObserver.observe(homeAppearItems[i]);
-                }
-            } else if (!entry.isIntersecting) {
-                console.log("Home hero is NOT intersecting the viewport");
-                for (let i = 0; i < homeAppearItems.length; i++) {
-                    homeSectionsObserver.observe(homeAppearItems[i]);
-                }
+                sectionsObserver.disconnect();
+                appearItems.forEach(item => delayHomeSectionsObserver.observe(item));
+            } else {
+                delayHomeSectionsObserver.disconnect();
+                appearItems.forEach(item => sectionsObserver.observe(item));
             }
         });
     };
     const homeHeroObserver = new IntersectionObserver(homeCallback);
     homeHeroObserver.observe(homeHero);
 } else {
-    // If home-hero class is not found, use sectionsObserver for appearItems
-    const appearItems = document.querySelectorAll('.appear');
-    const appearCallback = function (entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('inview');
-            } else if (entry.isIntersecting && entry.target.classList.contains('inview')) {
-                entry.unobserve(entry.target);
-            }
-        });
-    }
-    const sectionsObserver = new IntersectionObserver(appearCallback);
-    for (let i = 0; i < appearItems.length; i++) {
-        sectionsObserver.observe(appearItems[i]);
-    }
+    appearItems.forEach(item => sectionsObserver.observe(item));
 }
