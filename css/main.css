@@ -137,6 +137,12 @@ main,
 .appear.inview {
   opacity: 1;
   transform: none;
+  transition-delay: 0.3s;
+}
+
+.appear.delay-inview {
+  opacity: 1;
+  transform: none;
   transition-delay: 2.5s;
 }
 
