@@ -155,7 +155,7 @@ header .display-container{
 
 .nav-bar,
 .nav-dropdown{
-  display: flex;
+  display: none;
   justify-content: flex-end;
 }
 
@@ -163,7 +163,6 @@ header .display-container{
   display: flex;
   justify-content: flex-end;
   gap: 2rem;
-  padding-block: 0.5rem;
 }
 
 .nav-links{
@@ -175,13 +174,22 @@ header .display-container{
   text-decoration: none;
   text-transform: uppercase;
 }
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus{
   text-decoration: underline solid #6371A3 4px;
   text-underline-offset: 0.3rem;
 } 
+.nav-links .resume{
+  background-color: #6371A3;
+  padding: 0.5rem 1rem;
+}
+.nav-links .resume:hover,
+.nav-links .resume:focus{
+  transform: scale(1.05);
+} 
 
 .menu-btn {
-  display: none;
+  display: flex;
   align-self: flex-end;
   flex-direction: column;
   cursor: pointer;
@@ -195,6 +203,18 @@ header .display-container{
   margin: 3px 0;
   border-radius: 4px;
   transition: transform 0.3s ease;
+}
+
+.change .btn-line:nth-child(1) {
+  transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+.change .btn-line:nth-child(2) {
+  opacity: 0;
+}
+
+.change .btn-line:nth-child(3) {
+  transform: rotate(45deg) translate(-6px, -6px);
 }
 
 .nav-dropdown {
@@ -382,6 +402,13 @@ h3 {
   text-underline-offset: 0.4rem;
 }
 
+mark {
+  color: white;
+  text-decoration: underline solid #6371A3 2px;
+  text-underline-offset: 0.2rem;
+  background: transparent;
+}
+
 /* About section styles */
 
 .about-section-header-container {
@@ -406,6 +433,24 @@ results in it being out of line with the headshot */
 
 .about-section .section-content {
   padding-top: 2rem;
+}
+
+.indent-section-content{
+  margin: 2rem 0 0 1rem;
+  align-self: flex-end;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.indent-section-content>.section-content{
+  padding: 0;
+}
+
+.indent-section-content>img{
+  padding: 0;
+  margin: 0.25rem 0 0 0;
+  max-height: 1rem;
 }
 
 /* Skill section styles */
@@ -450,9 +495,7 @@ results in it being out of line with the headshot */
 
 /* Project section styles */
 .project-cards-wrapper{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
+  display: block;
 }
 
 .project-card {
@@ -605,6 +648,11 @@ form textarea {
   text-decoration: none;
 }
 
+.msg-btn:hover, 
+.msg-btn:focus {
+  transform: scale(1.05)
+}
+
 /* Footer */
 
 footer{
@@ -687,41 +735,36 @@ code {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-/* Smooth scrolling to a link: https://www.smashingmagazine.com/2021/07/dynamic-header-intersection-observer/ */
-   @media (prefers-reduced-motion: no-preference) {
-    .scroller {
-      scroll-behavior: smooth;
-    }
-  }
 
-   /* Tablets and smaller, max width of 768px */
-   @media (max-width: 768px) {
+   /* Tablet and larger = min-width of 768px */
+   @media (min-width: 768px) {
 
     /* navbar */
 
     .nav-bar{
-      display: none;
-    }
-  
-    .menu-btn {
       display: flex;
     }
-  
-    .change .btn-line:nth-child(1) {
-      transform: rotate(-45deg) translate(-7px, 6px);
-    }
-  
-    .change .btn-line:nth-child(2) {
-      opacity: 0;
-    }
-  
-    .change .btn-line:nth-child(3) {
-      transform: rotate(45deg) translate(-6px, -6px);
+
+    .nav-dropdown-link-container,
+    .nav-dropdown-link-container li,
+    .nav-dropdown-link-container a, 
+    .menu-btn,
+    .menu-btn .btn-line {
+      display: none;
+      padding: 0;
+      margin: 0;
     }
 
+    .nav-links li{
+      padding-block: 0.5rem;
+    }
+
+  
     /* project cards */
     .project-cards-wrapper{
-      display: block;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2rem;
     }
    }
 
