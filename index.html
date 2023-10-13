@@ -62,22 +62,22 @@
 
 
     <section class="home-hero hero">
-            <div class="background-fade-container background-fade-in delay-2">
-                <div class="display-container hero-text">
-                    <h1 class="heading-white-underline fade-in delay-0">Allison Truhlar</h1>
-                    <p class="fade-in delay-1">Full-Stack Software Developer</p>
-                </div>
+        <div class="background-fade-container background-fade-in delay-2">
+            <div class="display-container hero-text">
+                <h1 class="heading-white-underline fade-in delay-0">Allison Truhlar</h1>
+                <p class="fade-in delay-1">Full-Stack Software Developer</p>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <polygon fill="#3F4E85" points="0,100 100,0 100,100" />
-            </svg>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon fill="#3F4E85" points="0,100 100,0 100,100" />
+        </svg>
     </section>
 
     <main>
         <section id="about" class="about-section display-container appear">
             <div class="about-section-header-container">
                 <h2 class="section-header">About Me</h2>
-                <img class="headshot" src="./assets/img/Allison-Truhlar-headshot.png" loading="lazy"/>
+                <img class="headshot" src="./assets/img/Allison-Truhlar-headshot.png" loading="lazy" />
             </div>
             <p class="section-content">I am a full-stack software developer transitioning from a background in
                 environmental science research, teaching in higher ed, and Federal program management. The river above
@@ -89,46 +89,64 @@
             <div class="section-content">
                 <div class="skills-wrapper">
                     <div class="skill-item">
-                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios/50/html-5--v2.png"
-                            alt="html-5--v2" loading="lazy" />
+                        <div class="skill-icon-container">
+                            <img src="https://img.icons8.com/ffffff/ios/50/html-5--v2.png"
+                                alt="html-5--v2" loading="lazy" />
+                        </div>
                         <p>HTML5</p>
                     </div>
                     <div class="skill-item">
-                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios/50/css3.png" alt="css3" loading="lazy" />
+                        <div class="skill-icon-container">
+                            <img  src="https://img.icons8.com/ffffff/ios/50/css3.png" alt="css3"
+                                loading="lazy" />
+                        </div>
                         <p>CSS3</p>
                     </div>
                     <div class="skill-item">
-                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios/50/javascript--v1.png"
-                            alt="javascript--v1" loading="lazy"/>
+                        <div class="skill-icon-container">
+                            <img src="https://img.icons8.com/ffffff/ios/50/javascript--v1.png"
+                                alt="javascript--v1" loading="lazy" />
+                        </div>
                         <p>JavaScript</p>
                     </div>
                     <div class="skill-item">
-                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios-glyphs/60/react.png"
-                            alt="react" loading="lazy"/>
+                        <div class="skill-icon-container">
+                            <img src="https://img.icons8.com/ffffff/ios-glyphs/60/react.png"
+                                alt="react" loading="lazy" />
+                        </div>
                         <p>React</p>
                     </div>
                     <div class="skill-item">
-                        <img width="50" height="50" src="https://img.icons8.com/ffffff/windows/64/node-js.png"
-                            alt="node-js" loading="lazy"/>
+                        <div class="skill-icon-container">
+                            <img src="https://img.icons8.com/ffffff/windows/64/node-js.png"
+                                alt="node-js" loading="lazy" />
+                        </div>
                         <p>NodeJS</p>
                     </div>
                     <div class="skill-item">
-                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios/50/express-js.png"
-                            alt="express-js" loading="lazy"/>
+                        <div class="skill-icon-container">
+                            <img  src="https://img.icons8.com/ffffff/ios/50/express-js.png"
+                                alt="express-js" loading="lazy" />
+                        </div>
                         <p>Express</p>
                     </div>
                     <div class="skill-item">
-                        <img src="./assets/icons/icons8-mongodb-48.png" alt="Mongo D B" loading="lazy"/>
+                        <div class="skill-icon-container">
+                            <img src="./assets/icons/icons8-mongodb-48.png" alt="Mongo D B" loading="lazy" />
+                        </div>
                         <p>MongoDB</p>
                     </div>
                     <div class="skill-item">
-                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios-glyphs/60/github.png"
-                            alt="github" loading="lazy"/>
+                        <div class="skill-icon-container">
+                            <img src="https://img.icons8.com/ffffff/ios-glyphs/60/github.png"
+                                alt="github" loading="lazy" />
+                        </div>
                         <p>GitHub</p>
                     </div>
-                    <div class="skill-item">
-                        <img width="50" height="50" src="https://img.icons8.com/ffffff/ios/50/where.png" alt="where" loading="lazy"/>
-                        <p>Next?</p>
+                    <div id="skill-change" class="skill-item">
+                        <div id="skill-change-icon" class="skill-icon-container skill-change-icon">
+                        </div>
+                        <p id="skill-change-text">Next?</p>
                     </div>
                 </div>
             </div>
@@ -140,8 +158,8 @@
             <div class="project-cards-wrapper">
                 <div class="project-card">
                     <div class="project-card-img-container">
-                        <img src="./assets/img/Recipe-Card.png"
-                            loading="lazy" alt="Screenshot of the recipe keeper app. On the left two-thirds of the screenshot, there is a cake recipe. On the right one-third, there is a place to input a recipe URL on the top, and a card to input recipe details on the bottom." />
+                        <img src="./assets/img/Recipe-Card.png" loading="lazy"
+                            alt="Screenshot of the recipe keeper app. On the left two-thirds of the screenshot, there is a cake recipe. On the right one-third, there is a place to input a recipe URL on the top, and a card to input recipe details on the bottom." />
                     </div>
 
                     <div class="project-card-description-container">
@@ -172,8 +190,8 @@
 
                 <div class="project-card">
                     <div class="project-card-img-container">
-                        <img src="./assets/img/quizzical-merged.png"
-                        loading="lazy" alt="Side-by-side screenshots of the quizzical web app. The image on the left shows quiz questions with answers selected by the user. The image on the right shows these answers marked as correct (green) or incorrect (red)." />
+                        <img src="./assets/img/quizzical-merged.png" loading="lazy"
+                            alt="Side-by-side screenshots of the quizzical web app. The image on the left shows quiz questions with answers selected by the user. The image on the right shows these answers marked as correct (green) or incorrect (red)." />
                     </div>
 
                     <div class="project-card-description-container">
@@ -207,8 +225,8 @@
 
                 <div class="project-card">
                     <div class="project-card-img-container">
-                        <img src="./assets/img/Movie-Watchlist-screenshot.png"
-                        loading="lazy" alt="Screenshot of the landing page for the movie watchlist app. At the top of the landing page is a header with an option to view the watchlist, and an option to search for a movie. At the bottom is a white space with a centered film icon that says 'start exploring.'" />
+                        <img src="./assets/img/Movie-Watchlist-screenshot.png" loading="lazy"
+                            alt="Screenshot of the landing page for the movie watchlist app. At the top of the landing page is a header with an option to view the watchlist, and an option to search for a movie. At the bottom is a white space with a centered film icon that says 'start exploring.'" />
                     </div>
                     <div class="project-card-description-container">
 
@@ -230,10 +248,12 @@
                         </div>
                         <div class="project-links-container">
                             <div class="project-link-wrapper">
-                                <a class="project-link-text" href="https://glittery-strudel-296972.netlify.app">Live App</a>
+                                <a class="project-link-text" href="https://glittery-strudel-296972.netlify.app">Live
+                                    App</a>
                             </div>
                             <div class="project-link-wrapper">
-                                <a class="project-link-text" href="https://github.com/allison-truhlar/movie-watchlist">Source
+                                <a class="project-link-text"
+                                    href="https://github.com/allison-truhlar/movie-watchlist">Source
                                     Code</a>
                             </div>
                         </div>

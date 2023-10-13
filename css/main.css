@@ -418,6 +418,21 @@ results in it being out of line with the headshot */
   /* border: 1px solid red; */
 }
 
+.skill-icon-container{
+  height: 50px;
+  width: 50px;
+}
+
+.skill-icon-container>img{
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.skill-icon-container.skill-change-icon{
+  background-image: url("https://img.icons8.com/ffffff/ios/50/where.png");
+}
+
 .skill-item {
   display: flex;
   flex-direction: column;

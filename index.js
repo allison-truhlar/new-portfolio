@@ -65,3 +65,18 @@ if (homeHero) {
 } else {
     appearItems.forEach(item => sectionsObserver.observe(item));
 }
+
+// Code to change "what next" icon to "your tech stack"
+const skillDiv = document.getElementById("skill-change")
+const skillIcon = document.getElementById("skill-change-icon")
+const skillText = document.getElementById("skill-change-text")
+
+skillDiv.addEventListener("mouseover", () => {
+    skillIcon.style.backgroundImage="url('https://img.icons8.com/ffffff/ios/50/sheets.png')"
+    skillText.innerText="Your stack!"
+})
+
+skillDiv.addEventListener("mouseout", () => {
+    skillIcon.style.backgroundImage="url('https://img.icons8.com/ffffff/ios/50/where.png')"
+    skillText.innerText="What next?"
+})
