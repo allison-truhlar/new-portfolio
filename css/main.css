@@ -400,10 +400,11 @@ h3 {
 }
 
 mark {
-  color: white;
-  text-decoration: underline solid #6371A3 2px;
-  text-underline-offset: 0.2rem;
+  color: inherit;
+  text-decoration: none;
   background: transparent;
+  font-weight: 600;
+  
 }
 
 /* About section styles */
@@ -449,6 +450,17 @@ results in it being out of line with the headshot */
   padding: 0;
   margin: 0.25rem 0 0 0;
   max-height: 1rem;
+}
+
+.highlight {
+  color: white;
+  text-decoration: underline solid #6371A3 2px;
+  text-underline-offset: 0.2rem;
+}
+
+.highlight:hover,
+.highlight:focus{
+  background: #6371A3;
 }
 
 /* Skill section styles */
@@ -563,13 +575,13 @@ results in it being out of line with the headshot */
   align-self: flex-start;
   border-radius: 6.25rem;
   border: 1px solid #FFF;
-  padding: 0.5rem 0.9rem;
+  padding: 0.4rem 0.7rem;
   transition: transform .3s;
 }
 
 .project-link-text {
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 800;
   text-transform: uppercase;
   text-decoration: none;
@@ -748,7 +760,7 @@ code {
     }
     
     .project-card {
-      padding: 2rem;
+      padding: 1.5rem;
     }
    }
    
@@ -790,9 +802,18 @@ code {
     /* project cards */
     .project-cards-wrapper{
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       grid-gap: 2rem;
     }
+
+    .project-link-wrapper {
+      padding: 0.5rem 0.8rem;
+    }
+    
+    .project-link-text {
+      font-size: 0.7rem;
+    }
+
    }
 
 
@@ -805,9 +826,6 @@ code {
 
   /* Desktops, 1290px and larger */
   @media (min-width: 1290px){
-    html, body{
-      line-height: 1.5;
-    }
     .display-container{
       width: 60%;
    }
