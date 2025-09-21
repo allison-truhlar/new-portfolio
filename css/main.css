@@ -512,18 +512,18 @@ results in it being out of line with the headshot */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 2rem;
   margin: 0 0 2rem 0;
   padding: 1rem;
   width: 100%;
-  height: 28rem;
+  height: 30rem;
   border-radius: 5px;
   background-color: #4C5C96;
 }
 
 .project-card-img-container {
   display: flex;
-  height: 45%;
+  max-height: 45%;
   width: 85%;
 }
 
@@ -540,7 +540,8 @@ results in it being out of line with the headshot */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 50%;
+  flex-grow: 1;
+  min-height: 50%;
   max-width: 85%;
 }
 
@@ -553,6 +554,7 @@ results in it being out of line with the headshot */
 .project-card-skill-container,
 .project-links-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -585,6 +587,12 @@ results in it being out of line with the headshot */
   font-weight: 800;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+.project-link-text:hover, 
+.project-link-text:focus {
+  text-decoration: underline solid #fff 1px;
+  text-underline-offset: 0.2rem;
 }
 
 .project-link-wrapper:hover, 
