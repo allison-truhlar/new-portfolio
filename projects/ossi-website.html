@@ -1,0 +1,217 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Allison Truhlar's Portfolio</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="manifest" href="site.webmanifest">
+    <!-- <link rel="apple-touch-icon" href="icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+    <header>
+        <div class="display-container">
+            <nav class="nav-bar">
+                <ul class="nav-bar-link-container nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html/#about">About</a></li>
+                    <li><a href="../index.html/#projects">Projects</a></li>
+                    <li><a href="../index.html/#contact">Contact</a></li>
+                    <li class="resume"><a href="../assets/Allison Truhlar Resume.pdf" target="_blank">Resume</a></li>
+                </ul>
+            </nav>
+
+            <div id="menu-btn" class="menu-btn">
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+            </div>
+
+            <nav id="nav-dropdown" class="nav-dropdown display-container">
+                <ul class="nav-dropdown-link-container nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html/#about">About</a></li>
+                    <li><a href="../index.html/#projects">Projects</a></li>
+                    <li><a href="../index.html/#contact">Contact</a></li>
+                    <li class="resume"><a href="../assets/Allison Truhlar Resume.pdf" target="_blank">Resume</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="project-hero hero">
+        <div class="display-container">
+            <div class="hero-text">
+                <h1 class="heading-white-underline">Janelia Open Source Science Intiative website</h1>
+                <p>The Janelia Open Source Science Initiative (OSSI) website portfolio showcases software developed at
+                    the Howard Hughes
+                    Medical Institute’s Janelia Research Campus. I designed the site with Figma and built the site with
+                    AstroJS,
+                    incorporating React components for user interactivity, Nano Stores for state management, and
+                    Tailwind for styling.</p>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon fill="#3F4E85" points="0,100 100,0 100,100" />
+        </svg>
+    </section>
+
+    <main>
+        <div class="display-container flex">
+            <div class="project-page-img appear">
+                <img src="../assets/img/ossi-project-page-light.png"
+                    alt="Screenshot of the project page. At the top is the navigation bar with links to home, projects, and OSSI, and a theme toggle button. Beneath this, on the left, is a keyword search input. To the right of this are buttons to filter by OSSI funding status. Beneath the keyword search input is a menu of tags by which to filter projects. Finally, to the right of the filter menu and beneath the funding status buttons, are two project cards." />
+            </div>
+
+            <section class="appear">
+                <h2 class="project-section-header section-header">Purpose and Goal</h2>
+                <p class="project-section-content section-content">The original proposal for the site was developed by
+                    software engineers at the Howard Hughes Medical Institute’s Janelia
+                    Research Campus (referred to here as "Janelia") who wanted to make open source software developed at
+                    Janelia more easily
+                    discoverable for both internal and external scientific audiences.
+                </p>
+                <h3>Core requirements</h3>
+                <p class="project-section-content section-content">
+                    <span class="bold">1.</span> Open source the site content - any Janelia software developer or
+                    collaborator should be able to edit the site via a
+                    GitHub pull request.
+                </p>
+                <p class="project-section-content section-content">
+                    <span class="bold">2.</span> Support exploration of the software catalogue – include functionality
+                    for filtering by one or more tags and a keyword
+                    search that can be optionally combined with filters.
+                </p>
+                <p class="project-section-content section-content">
+                    <span class="bold">3.</span> Convey Janelia’s technical excellence with a modern website design.
+                </p>
+            </section>
+
+            <section class="appear">
+                <h2 class="project-section-header section-header">Spotlight: Filtering the project card display by one
+                    or more tags</h2>
+                <p class="project-section-content section-content">Implementing this core feature required overcoming
+                    several technical hurdles:</p>
+                <h3>Astro islands and state management</h3>
+                <p class="project-section-content section-content">
+                    AstroJS strips the JavaScript out of all components of the site except for “island” components. This
+                    means the parent of
+                    React island components, like my interactive filter menu and project cards, does not have access to
+                    the React framework
+                    library to use state management hooks. To overcome this, I initially made the project cards and
+                    filter menu both
+                    children of one giant React component rendered on the projects route layout. This allowed me to
+                    manage state with the
+                    familiar useState hook. However, it also resulted in a prop-drilling and hid the specifics of the
+                    route layout behind
+                    one component. I ultimately refactored the layout to make the filter menu and project cards direct
+                    children components
+                    of the static projects route. This meant implementing the Nano Stores library, recommended by Astro,
+                    for state
+                    management.
+                </p>
+                <h3>Linting of tags via GitHub actions</h3>
+                <p class="project-section-content section-content">
+                    Due to the site being open source, I needed to add a means of ensuring all the tags added by
+                    contributors matched those
+                    allowed on the site. I decided to add a GitHub action to automate this process and ensure higher
+                    accuracy than human
+                    review. When a pull request is opened against the main branch of the site, the action checks for any
+                    modified Markdown
+                    files and then lints the tag categories included in the file frontmatter. If invalid tags are found,
+                    the action returns
+                    a message to the pull request with the invalid tags and in which files they were found. The
+                    developer can then push
+                    changes to the pull request prior to it being accepted for merging.
+                </p>
+                <p class="project-section-content section-content">
+                    I accessed the Recipe Schema Markup through two steps: first, using Axios to fetch the HTML document
+                    for the URL provided by the user. Then, I used a package called Cheerio to parse the document,
+                    returning only the Recipe Schema Markup, which is contaned within a script tag of
+                    <code>type="application/ld+json"</code>. JSON-LD is the format for schema markup preferred by
+                    Google.
+                </p>
+                <p class="project-section-content section-content">
+                    Once I extracted the Recipe Schema Markup from the HTML document, since the format is JSON-LD, I
+                    could parse it with JSON.parse() and then access the data as I would for any other JSON data. I
+                    first found the object that contained the recipe data I was interested in, and then used key names
+                    to access the values of different properties (e.g., ingredients, instructions) in the object. These
+                    data could then be added to the app database as a recipe, just like the manually inputted recipe
+                    data.
+                </p>
+            </section>
+
+            <section class="appear">
+                <h2 class="project-section-header section-header">Current status</h2>
+                <p class="project-section-content section-content">The site is currently deployed as the home page for
+                    the <a href="https://ossi.janelia.org" class="project-link-text" target="_blank">Janelia Open Source
+                        Science Initiative (OSSI)</a>
+                    Users have shared positive feedback, for example stating that the site "is both beautiful
+                    and so useful."
+                </p>
+            </section>
+
+
+            <section class="appear">
+                <h2 class="project-section-header section-header">View Project</h2>
+                <div class="project-links-container">
+                    <div class="project-link-wrapper">
+                        <a href="https://ossi.janelia.org" class="project-link-text" target="_blank">Live
+                            Site</a>
+                    </div>
+                    <div class="project-link-wrapper">
+                        <a href="https://github.com/JaneliaSciComp/ossi-website" class="project-link-text"
+                            target="_blank">Source Code</a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <div class="project-contact contact appear">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon fill="#3F4E85" points="0,0 100,0 100,100" />
+        </svg>
+        <section class="display-container">
+            <h2 class="project-contact-header section-header">Contact</h2>
+
+            <p class="section-content">If you think I'm a good fit for an open position or you just want to say hello,
+                send a message! I look forward to hearing from you.</p>
+            <div class="project-msg-btn"><a class="msg-btn" href="/#contact">Go to contact form</a></div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Built by Allison Truhlar | 2025</p>
+        <p>Icons by <a href="https://icons8.com">Icons8</a></p>
+    </footer>
+
+    <script src="../index.js"></script>
+</body>
+
+</html>
