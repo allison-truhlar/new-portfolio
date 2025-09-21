@@ -125,7 +125,7 @@ main,
 
 /* Appear */
 .appear {
-  transition: all 0.8s;
+  transition: all 0.3s;
   opacity: 0;
   transform: translateY(40px);
 }
@@ -134,13 +134,13 @@ main,
 .appear.inview {
   opacity: 1;
   transform: none;
-  transition-delay: 0.3s;
+  transition-delay: 0.2s;
 }
 
 .appear.delay-inview {
   opacity: 1;
   transform: none;
-  transition-delay: 2.5s;
+  transition-delay: 0.8s;
 }
 
 
