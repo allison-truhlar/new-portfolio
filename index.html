@@ -61,8 +61,6 @@
         </div>
     </header>
 
-
-
     <section class="home-hero hero">
         <div class="background-fade-container background-fade-in">
             <div class="display-container hero-text">
@@ -187,27 +185,31 @@
         </svg>
         <section class="display-container">
             <h2 class="heading-white-underline">Contact</h2>
-
-            <p class="section-content">If you think I'm a good fit for an open position or you just want to say hello,
-                send a message! I look forward to hearing from you.</p>
-
-            <form name="contact" method="POST" data-netlify="true">
-
-                <label for="name">Name</label>
-                <input id="name" name="name" required aria-required="true" type="text" placeholder="Name" />
-
-                <label for="email">Email</label>
-                <input id="email" name="email" required aria-required="true" type="email" placeholder="Email" />
-
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required aria-required="true"
-                    placeholder="Your message here..."></textarea>
-
-                <button class="msg-btn" type="submit">Send message</button>
-
-            </form>
+            <div class="section-content">
+                <p>If you think I'm a good fit for an open position or you just want to say hello,
+                            send a message! I look forward to hearing from you.</p>
+                <div class="icons-wrapper">
+                    <a class="icon-item" href="mailto:amtruhlar@gmail.com">
+                        <div class="icon-container">
+                            <img src="./assets/icons/icons8-email-48.png" alt="Letter icon" loading="lazy" />
+                        </div>
+                        <p>Email</p>
+                    </a>
+                    <a class="icon-item" href="https://www.linkedin.com/in/allison-truhlar/" target="_blank">
+                        <div class="icon-container">
+                            <img src="./assets/icons/icons8-linkedin-48.png" alt="LinkedIn logo" loading="lazy" />
+                        </div>
+                        <p>LinkedIn</p>
+                    </a>
+                    <a class="icon-item" href="https://github.com/allison-truhlar" target="_blank">
+                        <div class="icon-container">
+                            <img src="./assets/icons/icons8-github-48.png" alt="GitHub logo" loading="lazy" />
+                        </div>
+                        <p>GitHub</p>
+                    </a> 
+                </div>  
+            </div>
         </section>
-
     </div>
 
     <footer>
