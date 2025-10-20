@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Allison Truhlar's Portfolio</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <!-- <link rel="apple-touch-icon" href="icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <header>
+      <div class="display-container">
+        <nav class="nav-bar">
+          <ul class="nav-bar-link-container nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html/#about">About</a></li>
+            <li><a href="../index.html/#projects">Projects</a></li>
+            <li><a href="../index.html/#contact">Contact</a></li>
+            <li class="resume">
+              <a href="../assets/Allison Truhlar Resume.pdf" target="_blank"
+                >Resume</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-btn" class="menu-btn">
+          <div class="btn-line"></div>
+          <div class="btn-line"></div>
+          <div class="btn-line"></div>
+        </div>
+
+        <nav id="nav-dropdown" class="nav-dropdown display-container">
+          <ul class="nav-dropdown-link-container nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html/#about">About</a></li>
+            <li><a href="../index.html/#projects">Projects</a></li>
+            <li><a href="../index.html/#contact">Contact</a></li>
+            <li class="resume">
+              <a href="../assets/Allison Truhlar Resume.pdf" target="_blank"
+                >Resume</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="project-hero hero">
+      <div class="display-container">
+        <div class="hero-text">
+          <h1 class="heading-white-underline">
+            Wormbot: A ROS-Enabled System for Managing Nematode Lifespan
+            Experiments
+          </h1>
+          <p>
+            I developed the web UI for the Wormbot system, and successfully
+            implemented the idea of using Robot Operating System (ROS) messaging
+            to allow scientists to use the UI to easily schedule and manage
+            imaging experiments. I built the web app with React Router and
+            Tailwind, the ROS nodes with Python, and used Docker for
+            containerization.
+          </p>
+        </div>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <polygon fill="#3F4E85" points="0,100 100,0 100,100" />
+      </svg>
+    </section>
+
+    <main>
+      <div class="display-container flex">
+        <div class="project-page-img appear">
+          <img
+            src="../assets/img/wormbot-device-control-page.png"
+            alt="Screenshot of the device control page in the Wormbot user interface. This page allows is automatically populated with all device controls exposed by the hardware developer. This image shows test inputs for the camera settings, taking images, transfering files to the network attached storage (NAS), and previewing the current camera view. There is also a log section at the bottom of the screen."
+          />
+        </div>
+        <section class="appear">
+          <h2 class="project-section-header section-header">
+            Purpose and Goal
+          </h2>
+          <p class="project-section-content section-content">
+            The Wormbot system was developed by the Meng Wang Lab at the Howard
+            Hughes Medical Institute's Janelia Research Campus. Wormbot supports
+            experiments that require taking images of many
+            <em>C. elegans</em> (nematodes) over their lifetimes to study
+            mechanisms of organism aging.
+          </p>
+
+          <p class="project-section-content section-content">
+            I was brought onto the project to provide software support;
+            specifically, I was asked to develop a web interface that scientists
+            could use to control the imaging experiments. In addition, I
+            supported the lab in achieving their goal of designing a scalable
+            system, consulting with colleagues in my department to identify and
+            implement a ROS-based messaging system amongst the UI and the
+            cameras, robot, and storage hardware involved in the system.
+          </p>
+
+          <h3>Core requirements</h3>
+          <ul class="project-section-content section-content">
+            <li>
+              <span class="bold">Provide an intuitive web interface</span> –
+              Allow biologists with varying technical backgrounds to schedule
+              experiments and control hardware without requiring command-line
+              expertise or custom coding.
+            </li>
+            <li>
+              <span class="bold">Enable scalability and flexibility</span> –
+              Design a system architecture that could easily accommodate
+              additional hardware components as experiments scale up.
+            </li>
+            <li>
+              <span class="bold">Prioritize accessible hardware</span> –
+              Leverage affordable components like Raspberry Pi computers and
+              cameras to keep costs manageable for labs, and make setting up the
+              software on these components as easy as possible.
+            </li>
+          </ul>
+        </section>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">
+            Hardware Architecture
+          </h2>
+          <p class="project-section-content section-content">
+            The basic features of the setup includes:
+          </p>
+          <ul class="project-section-content section-content">
+            <li>"Hotel" storage with slots for six-well agar plates</li>
+            <li>Arducam cameras, each attached to a Raspberry Pi 5</li>
+            <li>
+              A robot controlled by a seventh Raspberry Pi 5, that transports
+              plates between hotel storage and the imaging platform
+            </li>
+            <li>
+              A scheduler node and ROS bridge server running on another computer
+              on the same local network
+            </li>
+            <li>
+              A Synology network-attached storage (NAS) device for image storage
+            </li>
+          </ul>
+        </section>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">
+            Software Architecture and ROS Implementation
+          </h2>
+          <h3>Why ROS?</h3>
+          <p class="project-section-content section-content">
+            After evaluating options for inter-device communication, I selected
+            the Robot Operating System (ROS) framework. My work builds on a
+            system developed by my colleague David Schauder for the Tervo Lab at
+            Janelia. ROS offered several advantages over alternatives like web
+            sockets:
+          </p>
+          <ul class="project-section-content section-content">
+            <li>
+              <span class="bold">Scalability</span> – ROS nodes automatically
+              discover other nodes on the same network within the same ROS
+              domain. Nodes advertise their presence on startup, shutdown, and
+              periodically while running, eliminating the need to manually
+              configure IP addresses when adding hardware.
+            </li>
+
+            <li>
+              <span class="bold">Robustness</span> – If a device loses network
+              connection and is assigned a new IP address upon reconnection, ROS
+              nodes can be rediscovered automatically, whereas web socket
+              connections would break.
+            </li>
+
+            <li>
+              <span class="bold">Flexibility</span> – The automatic node
+              discovery enables different labs to configure nodes across
+              whatever hardware setup meets their needs, whether consolidating
+              all nodes on one workstation or distributing them across multiple
+              Raspberry Pis.
+            </li>
+          </ul>
+
+          <h3>System Components</h3>
+          <p class="project-section-content section-content">
+            The software system consists of:
+          </p>
+          <ul class="project-section-content section-content">
+            <li>
+              <span class="bold">Camera Python ROS nodes</span> – One Docker
+              container per camera Pi, controlling image capture
+            </li>
+            <li>
+              <span class="bold">Robot Python ROS node</span> – Docker container
+              controlling plate movement
+            </li>
+            <li>
+              <span class="bold">Scheduler Python ROS node</span> – Docker
+              container managing experiment scheduling and workflow
+            </li>
+            <li>
+              <span class="bold">ROS Bridge server</span> – Enables
+              communication between the web UI and ROS nodes
+            </li>
+            <li>
+              <span class="bold">FastAPI servers</span> – Provide REST endpoints
+              for file browsing and log viewing
+            </li>
+            <li>
+              <span class="bold">Web UI</span> – React application allowing
+              users to configure and monitor experiments
+            </li>
+          </ul>
+          <p class="project-section-content section-content">
+            All ROS nodes communicate via publish/subscribe topics using
+            JSON-formatted messages. The nodes run in Docker containers built on
+            a base ROS Humble image with the Cyclone DDS middleware for improved
+            networking reliability.
+          </p>
+        </section>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">
+            Key Technical Achievements
+          </h2>
+
+          <h3>
+            Streamlining Hardware Control Development Through Dynamic Function
+            Discovery
+          </h3>
+          <p class="project-section-content section-content">
+            One of the most significant technical achievements was creating a
+            system that allowed the embedded hardware developer (Haining Zhang)
+            from the Wang Lab to rapidly develop and test robot control
+            functions without requiring me (the UI developer) to manually update
+            interface code each time.
+          </p>
+          <p class="project-section-content section-content">
+            I implemented a function discovery pattern where:
+          </p>
+          <ol class="project-section-content section-content">
+            <li>
+              Hardware-specific functions are defined in a
+              <code>control_scripts/</code> directory within each node package
+            </li>
+            <li>
+              An <code>__init__.py</code> file imports these functions and uses
+              Python's introspection capabilities to automatically extract
+              function names, parameter names, parameter types, and default
+              values
+            </li>
+            <li>
+              During node initialization, this metadata is published via a
+              "heartbeat" ROS topic that the UI subscribes to
+            </li>
+            <li>
+              The UI dynamically generates control interfaces based on the
+              discovered functions
+            </li>
+          </ol>
+          <p class="project-section-content section-content">
+            This pattern meant that Haining could add a new robot control
+            function by simply:
+          </p>
+          <ul class="project-section-content section-content">
+            <li>
+              Writing the function in <code>control_scripts/robot.py</code>
+            </li>
+            <li>
+              Adding its name to the <code>valid_functions</code> dictionary in
+              <code>__init__.py</code>
+            </li>
+            <li>Restarting the container</li>
+          </ul>
+          <p class="project-section-content section-content">
+            The testing page in the UI would automatically display the new
+            function with appropriate input fields based on the parameter types.
+            This dramatically accelerated the development cycle and allowed
+            Haining to focus on hardware control rather than UI implementation.
+          </p>
+
+          <h3>Containerization and Deployment Strategy</h3>
+          <p class="project-section-content section-content">
+            To streamline development, deployment, and maintenance across
+            multiple Raspberry Pis, I designed a comprehensive containerization
+            strategy addressing three key needs: rapid development iteration,
+            automated NAS connectivity, and one-command deployment to production
+            hardware.
+          </p>
+
+          <h4>Development Mode with Live Code Reloading</h4>
+          <p class="project-section-content section-content">
+            For development, I created a
+            <code>dev.docker-compose.yml</code> configuration that uses bind
+            mounts to map the local package directory into the container,
+            allowing developers to edit Python files on the Pi's filesystem and
+            see changes reflected immediately.
+          </p>
+          <p class="project-section-content section-content">
+            The development setup uses <code>watchmedo</code> from the Python
+            <code>watchdog</code> library to monitor the mounted directory for
+            changes. When a <code>.py</code> file is saved, the watcher
+            automatically kills and restarts the ROS node process, loading the
+            updated code without requiring a container rebuild. This
+            dramatically speeds up the development cycle—developers can test
+            hardware control functions and debug issues in seconds rather than
+            waiting minutes for image rebuilds.
+          </p>
+
+          <h4>Automated SSH Key Management via Docker Volumes</h4>
+          <p class="project-section-content section-content">
+            Managing SSH authentication for NAS transfers across multiple
+            Raspberry Pis presented a significant operational challenge. I
+            solved this by combining Docker named volumes with an entrypoint
+            script that handles SSH key lifecycle management.
+          </p>
+          <p class="project-section-content section-content">
+            Each node's docker-compose file defines a named volume
+            <code>wormbot_ssh_keys</code> that's mounted to
+            <code>/root/.ssh</code> inside the container, persisting across
+            container restarts and updates. The entrypoint script runs before
+            the main ROS node process and implements conditional logic: if SSH
+            keys don't exist in the volume, it generates a new key pair and uses
+            <code>sshpass</code> to copy the public key to the NAS using
+            credentials from the <code>.env</code> file. If keys already exist,
+            it simply updates the <code>known_hosts</code> file and proceeds.
+          </p>
+          <p class="project-section-content section-content">
+            This approach provides one-time setup (SSH keys are generated only
+            on first container startup), persistence (keys survive container
+            updates), full automation (no manual intervention beyond the initial
+            NAS password), and security (private keys never leave the container
+            or volume).
+          </p>
+
+          <h4>Streamlined Production Deployment via Install Script</h4>
+          <p class="project-section-content section-content">
+            To make deploying Wormbot to new hardware as simple as possible, I
+            created a deployment script (<code>wormbot-install.sh</code>) hosted
+            on an internal Janelia web server, allowing users to deploy any node
+            type with a single command:
+          </p>
+          <pre
+            class="project-section-content section-content"
+          ><code>curl -fsSL https://host.org/wormbot-install.sh | \
+  sudo DEVICE=camera_12 TYPE=camera bash</code></pre>
+          <p class="project-section-content section-content">
+            The script handles the complete deployment workflow: validates
+            inputs, pulls the latest image from Janelia's Docker registry,
+            creates the directory structure, generates an <code>.env</code> file
+            with device ID and NAS credentials, extracts the production
+            <code>docker-compose.yml</code> from the image, and starts the
+            services.
+          </p>
+          <p class="project-section-content section-content">
+            This approach provides minimal setup requirements (users only need
+            Docker and environment variables), version control (the
+            docker-compose configuration is embedded in the versioned image),
+            flexibility (environment variable overrides for custom
+            configurations), and validation (built-in error checking for common
+            mistakes).
+          </p>
+          <p class="project-section-content section-content">
+            The multi-stage Docker build process ensures reliable deployment: a
+            base ROS Humble image provides the framework, a project-specific
+            base adds Wormbot dependencies, and node-specific images built with
+            a <code>NODE_TYPE</code> argument include the appropriate package
+            files and docker-compose configuration.
+          </p>
+          <p class="project-section-content section-content">
+            By combining live code reloading for development, automated SSH key
+            management, and one-command deployment, I created a system that's
+            developer-friendly during active development and operationally
+            simple for production deployment. Researchers can set up a new node
+            in minutes with a single command, while developers can iterate on
+            hardware control code in seconds.
+          </p>
+        </section>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">
+            Current Status and Future Work
+          </h2>
+          <p class="project-section-content section-content">
+            The system is operational and has received positive feedback from
+            the Wang Lab. Current work focuses on:
+          </p>
+          <ul class="project-section-content section-content">
+            <li>
+              Conducting the first full-scale experiment with multiple plates
+            </li>
+            <li>Testing scalability to multiple robot/hotel setups</li>
+            <li>
+              Adding scheduler flexibility for more complex imaging patterns
+            </li>
+            <li>
+              Implementing additional UI features for experiment monitoring
+            </li>
+            <li>
+              Exploring ROS services in addition to topics for request/response
+              interactions
+            </li>
+          </ul>
+          <p class="project-section-content section-content">
+            The modular architecture and careful attention to documentation
+            position Wormbot well for adoption by other research labs seeking to
+            automate nematode lifespan studies.
+          </p>
+        </section>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">
+            Acknowledgements
+          </h2>
+          <ul class="project-section-content section-content">
+            <li>Meng Wang Lab: Haining Zhang, Marzia Savini, Meng Wang</li>
+            <li>
+              Janelia Engineering Team (jET): Sam Jager, Jon Arnold, Dan Smith
+            </li>
+            <li>
+              Janelia Scientific Computing Software Department: David Schauder,
+              Jody Clements, Konrad Rokicki
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <div class="project-contact contact appear">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <polygon fill="#3F4E85" points="0,0 100,0 100,100" />
+      </svg>
+      <section class="display-container">
+        <h2 class="project-contact-header section-header">Contact</h2>
+
+        <p class="section-content">
+          If you think I'm a good fit for an open position or you just want to
+          say hello, send a message! I look forward to hearing from you.
+        </p>
+        <div class="icons-wrapper">
+          <a class="icon-item" href="mailto:amtruhlar@gmail.com">
+            <div class="icon-container">
+              <img
+                src="../assets/icons/icons8-email-48.png"
+                alt="Letter icon"
+                loading="lazy"
+              />
+            </div>
+            <p>Email</p>
+          </a>
+          <a
+            class="icon-item"
+            href="https://www.linkedin.com/in/allison-truhlar/"
+            target="_blank"
+          >
+            <div class="icon-container">
+              <img
+                src="../assets/icons/icons8-linkedin-48.png"
+                alt="LinkedIn logo"
+                loading="lazy"
+              />
+            </div>
+            <p>LinkedIn</p>
+          </a>
+          <a
+            class="icon-item"
+            href="https://github.com/allison-truhlar"
+            target="_blank"
+          >
+            <div class="icon-container">
+              <img
+                src="../assets/icons/icons8-github-48.png"
+                alt="GitHub logo"
+                loading="lazy"
+              />
+            </div>
+            <p>GitHub</p>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>Built by Allison Truhlar | 2025</p>
+      <p>Icons by <a href="https://icons8.com">Icons8</a></p>
+    </footer>
+
+    <script src="../index.js"></script>
+  </body>
+</html>
