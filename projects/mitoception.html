@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Allison Truhlar's Portfolio</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <!-- <link rel="apple-touch-icon" href="icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <header>
+      <div class="display-container">
+        <nav class="nav-bar">
+          <ul class="nav-bar-link-container nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html/#about">About</a></li>
+            <li><a href="../index.html/#projects">Projects</a></li>
+            <li><a href="../index.html/#contact">Contact</a></li>
+            <li class="resume">
+              <a href="../assets/Allison Truhlar Resume.pdf" target="_blank"
+                >Resume</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-btn" class="menu-btn">
+          <div class="btn-line"></div>
+          <div class="btn-line"></div>
+          <div class="btn-line"></div>
+        </div>
+
+        <nav id="nav-dropdown" class="nav-dropdown display-container">
+          <ul class="nav-dropdown-link-container nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html/#about">About</a></li>
+            <li><a href="../index.html/#projects">Projects</a></li>
+            <li><a href="../index.html/#contact">Contact</a></li>
+            <li class="resume">
+              <a href="../assets/Allison Truhlar Resume.pdf" target="_blank"
+                >Resume</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="project-hero hero">
+      <div class="display-container">
+        <div class="hero-text">
+          <h1 class="heading-white-underline">Mitoception</h1>
+          <p>
+            Mitoception is a web application for scientific researchers to
+            analyze mitochondria images using a machine learning model developed
+            by the Meng Wang Lab at Janelia. I was responsible for creating the
+            original application using a server-side PyTorch implementation. I
+            later added a client-side ONNX Runtime Web implementation, enabling
+            in-browser inference without server dependencies. I built the app
+            using React on the frontend and FastAPI on the backend.
+          </p>
+        </div>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <polygon fill="#3F4E85" points="0,100 100,0 100,100" />
+      </svg>
+    </section>
+
+    <main>
+      <div class="display-container flex">
+        <div class="project-page-img appear">
+          <!-- <img
+            src="../assets/img/mitoception.png"
+            alt="Screenshot of Mitoception's interface showing the file upload panel and results grid displaying analyzed mitochondria images with probability scores and color overlay visualization."
+          /> -->
+        </div>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">
+            Purpose and Goal
+          </h2>
+          <p class="project-section-content section-content">
+            Mitoception is a web application that provides a user interface for
+            a machine learning model developed by Haining Zhang in the Meng Wang
+            lab at Howard Hughes Medical Institute's Janelia Research Campus.
+            The application enables researchers to upload <em>>C. elegans</em>
+            mitochondria images and receive automated classifications.
+          </p>
+          <p class="project-section-content section-content">
+            My first implementation of the application used a FastAPI backend
+            with PyTorch to perform inference on uploaded images. The new
+            architecture gives the user the choice of using the server-based
+            inference, or running inference entirely in the browser using
+            WebAssembly, eliminating concerns external users might have of
+            submitting their data to Janelia servers and reducing latency when
+            there are many application users, while maintaining model accuracy.
+          </p>
+        </section>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">
+            Spotlight: Implementing persistent model storage with IndexedDB
+          </h2>
+          <p class="project-section-content section-content">
+            One of the primary challenges in migrating to client-side inference
+            was managing the 28MB ONNX model file. Intially, the file was
+            downloaded on every page refresh, resulting in delays of several
+            seconds to over a minute depending on network conditions. This
+            created an unacceptable user experience.
+          </p>
+          <p class="project-section-content section-content">
+            I implemented a caching solution using the browser's IndexedDB API
+            to store the model file locally after the initial download. The
+            implementation checks IndexedDB for an existing model before
+            attempting to fetch from the server, and stores the model blob after
+            successful download. This approach reduced model loading time from
+            several seconds down to approximately 25 milliseconds on subsequent
+            visits, dramatically improving the user experience.
+          </p>
+          <p class="project-section-content section-content">
+            The solution required careful coordination between React hooks and
+            the ONNX Runtime Web initialization sequence. I used a
+            <code>useEffect</code> hook to trigger model retrieval and inference
+            session creation when users navigate to the analysis page, storing
+            the session in React state for reuse across multiple image analyses.
+            To handle the case where users might submit images before the model
+            finishes loading, I implemented a file queuing system that holds
+            uploaded files in state and automatically processes them once the
+            inference session is ready.
+          </p>
+        </section>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">
+            Spotlight: Troubleshooting tensor preprocessing for ResNet models
+          </h2>
+          <p class="project-section-content section-content">
+            A critical challenge emerged during testing when the ONNX model
+            produced different results than the original PyTorch implementation
+            for identical input images. After extensive debugging, I discovered
+            the issue was in the image preprocessing pipeline—specifically, the
+            normalization step that converts pixel values into the tensor format
+            expected by the ResNet architecture.
+          </p>
+          <p class="project-section-content section-content">
+            The ResNet model family expects input images to be normalized using
+            specific mean and standard deviation values for each RGB channel:
+            mean values of [0.485, 0.456, 0.406] and standard deviations of
+            [0.229, 0.224, 0.225]. These values were derived from ImageNet
+            statistics and are critical for proper model performance. The
+            tutorial code I started from used a simplified normalization
+            approach that didn't match these requirements.
+          </p>
+          <p class="project-section-content section-content">
+            I modified the <code>imageDataToTensor</code> function in
+            <code>imageHelper.ts</code> to apply the correct channel-specific
+            normalization. For each pixel, I converted the RGB values from 0-255
+            to 0-1 range, then applied the ImageNet normalization formula:
+            <code>(pixel_value / 255.0 - mean) / std_dev</code> for each
+            channel. This required restructuring the tensor layout to organize
+            pixel data by channel rather than by pixel, ensuring the normalized
+            values aligned with the model's expectations. After implementing
+            these changes, the ONNX model outputs matched the PyTorch
+            implementation exactly.
+          </p>
+        </section>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">Current status</h2>
+          <p class="project-section-content section-content">
+            Mitoception is deployed in production but awaiting peer-review of
+            the associated scientific publication before it is released for
+            public use. The application supports batch uploads of up to 500
+            images and provides both visual results with color-coded probability
+            overlays and downloadable CSV files for further analysis.
+          </p>
+        </section>
+
+        <section class="appear">
+      </div>
+    </main>
+    <div class="project-contact contact appear">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <polygon fill="#3F4E85" points="0,0 100,0 100,100" />
+      </svg>
+      <section class="display-container">
+        <h2 class="project-contact-header section-header">Contact</h2>
+
+        <p class="section-content">
+          If you think I'm a good fit for an open position or you just want to
+          say hello, send a message! I look forward to hearing from you.
+        </p>
+        <div class="icons-wrapper">
+          <a class="icon-item" href="mailto:amtruhlar@gmail.com">
+            <div class="icon-container">
+              <img
+                src="../assets/icons/icons8-email-48.png"
+                alt="Letter icon"
+                loading="lazy"
+              />
+            </div>
+            <p>Email</p>
+          </a>
+          <a
+            class="icon-item"
+            href="https://www.linkedin.com/in/allison-truhlar/"
+            target="_blank"
+          >
+            <div class="icon-container">
+              <img
+                src="../assets/icons/icons8-linkedin-48.png"
+                alt="LinkedIn logo"
+                loading="lazy"
+              />
+            </div>
+            <p>LinkedIn</p>
+          </a>
+          <a
+            class="icon-item"
+            href="https://github.com/allison-truhlar"
+            target="_blank"
+          >
+            <div class="icon-container">
+              <img
+                src="../assets/icons/icons8-github-48.png"
+                alt="GitHub logo"
+                loading="lazy"
+              />
+            </div>
+            <p>GitHub</p>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>Built by Allison Truhlar | 2025</p>
+      <p>Icons by <a href="https://icons8.com">Icons8</a></p>
+    </footer>
+
+    <script src="../index.js"></script>
+  </body>
+</html>
