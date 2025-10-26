@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Allison Truhlar's Portfolio</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <!-- <link rel="apple-touch-icon" href="icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <header>
+      <div class="display-container">
+        <nav class="nav-bar">
+          <ul class="nav-bar-link-container nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html/#about">About</a></li>
+            <li><a href="../index.html/#projects">Projects</a></li>
+            <li><a href="../index.html/#contact">Contact</a></li>
+            <li class="resume">
+              <a href="../assets/Allison Truhlar Resume.pdf" target="_blank"
+                >Resume</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-btn" class="menu-btn">
+          <div class="btn-line"></div>
+          <div class="btn-line"></div>
+          <div class="btn-line"></div>
+        </div>
+
+        <nav id="nav-dropdown" class="nav-dropdown display-container">
+          <ul class="nav-dropdown-link-container nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html/#about">About</a></li>
+            <li><a href="../index.html/#projects">Projects</a></li>
+            <li><a href="../index.html/#contact">Contact</a></li>
+            <li class="resume">
+              <a href="../assets/Allison Truhlar Resume.pdf" target="_blank"
+                >Resume</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="project-hero hero">
+      <div class="display-container">
+        <div class="hero-text">
+          <h1 class="heading-white-underline">Fileglancer</h1>
+          <p>
+            Fileglancer is a web application for scientific researchers at the
+            Howard Hughes Medical Institute's Janelia Research Campus to browse,
+            share, and visualize large imaging datasets on network file systems.
+            I was responsible for implementing the frontend using React, React
+            Router, and TypeScript, including building frontend unit tests with
+            Vitest and React Testing Library and integration tests using Vitest
+            and Playwright.
+          </p>
+        </div>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <polygon fill="#3F4E85" points="0,100 100,0 100,100" />
+      </svg>
+    </section>
+
+    <main>
+      <div class="display-container flex">
+        <div class="project-page-img appear">
+          <img
+            src="../assets/img/fileglancer.png"
+            alt="Screenshot of Fileglancer's file browser showing the navigation sidebar on the left, a directory listing with files and folders and the Zarr image preview panel in the center, and properties panel displaying file metadata on the right."
+          />
+        </div>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">
+            Purpose and Goal
+          </h2>
+          <p class="project-section-content section-content">
+            Fileglancer is a web application that connects to internal file
+            systems at Janelia Research Campus, designed to reduce friction and
+            activation energy when researchers need to share large imaging
+            datasets with colleagues. Rather than requiring data migration,
+            Fileglancer allows users to keep their data on existing network file
+            systems while providing modern web-based tools for browsing,
+            sharing, and visualization.
+          </p>
+          <p class="project-section-content section-content">
+            My role on this project was implementing all features on the
+            frontend using React, React Router, and TypeScript. As part of this,
+            I was responsible for adding frontend unit testing using Vitest and
+            React Testing Library and end-to-end test suite using Vitest and
+            Playwright.
+          </p>
+        </section>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">
+            Spotlight: Migrating from mock APIs to real file system testing
+          </h2>
+          <p class="project-section-content section-content">
+            The original Playwright tests used mock API endpoints to simulate
+            file operations, but this approach couldn't catch bugs in the actual
+            backend file system logic. I refactored the test infrastructure to
+            use temporary directories and actual API calls, requiring several
+            technical changes:
+          </p>
+
+          <h3>
+            Coordinating test environment setup across Playwright configuration
+          </h3>
+          <p class="project-section-content section-content">
+            The challenge was that test files needed to exist before the
+            Fileglancer server started, but Playwright fixtures run after the
+            server is already running. I solved this by moving file creation
+            into
+            <code>playwright.config.js</code>, where I create the temporary
+            directories, populate them with test data including minimal Zarr and
+            OME-Zarr data structures, and then pass their paths to the server
+            via the <code>FGC_FILE_SHARE_MOUNTS</code> environment variable.
+            This ensures the server sees the test files when it initializes,
+            enabling true end-to-end testing of file browsing, creation,
+            deletion, and data link operations.
+          </p>
+
+          <h3>Custom Playwright fixtures for test isolation and reusability</h3>
+          <p class="project-section-content section-content">
+            With real file system testing, I needed a way to ensure each test
+            started in a predictable state. I created a custom Playwright
+            fixture called <code>fileglancerPage</code> that handles setup (mock
+            API routes, login, navigation to test directory) and teardown
+            (cleanup of API mocks) automatically. Tests import this fixture and
+            receive a fully-configured page object, eliminating repetitive setup
+            code. The fixture uses Playwright's <code>test.extend()</code> API
+            to wrap the standard page fixture, demonstrating advanced
+            understanding of Playwright's architecture.
+          </p>
+        </section>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">Current status</h2>
+          <p class="project-section-content section-content">
+            Fileglancer is published on PyPI and deployed in production at
+            Janelia Research Campus, serving dozens of researchers who use it
+            daily to share and visualize large imaging datasets. The frontend
+            test suites I built run in CI/CD via GitHub Actions and have caught
+            multiple regressions before they reached production.
+          </p>
+        </section>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">View Project</h2>
+          <div class="project-links-container">
+            <div class="project-link-wrapper">
+              <a
+                href="https://janeliascicomp.github.io/fileglancer-docs/"
+                class="project-link-text"
+                target="_blank"
+                >Documentation</a
+              >
+            </div>
+            <div class="project-link-wrapper">
+              <a
+                href="https://github.com/JaneliaSciComp/fileglancer"
+                class="project-link-text"
+                target="_blank"
+                >Source Code</a
+              >
+            </div>
+            <div class="project-link-wrapper">
+              <a
+                href="https://pypi.org/project/fileglancer/"
+                class="project-link-text"
+                target="_blank"
+                >PyPI Package</a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <div class="project-contact contact appear">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <polygon fill="#3F4E85" points="0,0 100,0 100,100" />
+      </svg>
+      <section class="display-container">
+        <h2 class="project-contact-header section-header">Contact</h2>
+
+        <p class="section-content">
+          If you think I'm a good fit for an open position or you just want to
+          say hello, send a message! I look forward to hearing from you.
+        </p>
+        <div class="icons-wrapper">
+          <a class="icon-item" href="mailto:amtruhlar@gmail.com">
+            <div class="icon-container">
+              <img
+                src="../assets/icons/icons8-email-48.png"
+                alt="Letter icon"
+                loading="lazy"
+              />
+            </div>
+            <p>Email</p>
+          </a>
+          <a
+            class="icon-item"
+            href="https://www.linkedin.com/in/allison-truhlar/"
+            target="_blank"
+          >
+            <div class="icon-container">
+              <img
+                src="../assets/icons/icons8-linkedin-48.png"
+                alt="LinkedIn logo"
+                loading="lazy"
+              />
+            </div>
+            <p>LinkedIn</p>
+          </a>
+          <a
+            class="icon-item"
+            href="https://github.com/allison-truhlar"
+            target="_blank"
+          >
+            <div class="icon-container">
+              <img
+                src="../assets/icons/icons8-github-48.png"
+                alt="GitHub logo"
+                loading="lazy"
+              />
+            </div>
+            <p>GitHub</p>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>Built by Allison Truhlar | 2025</p>
+      <p>Icons by <a href="https://icons8.com">Icons8</a></p>
+    </footer>
+
+    <script src="../index.js"></script>
+  </body>
+</html>
