@@ -86,6 +86,22 @@ textarea {
   box-sizing: border-box;
 }
 
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #3f4e85;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 html {
   height: 100%;
   font-size: calc(15px + 0.390625vw);
@@ -294,39 +310,11 @@ p {
   opacity: 0;
   animation: 1s forwards fadeIn;
   -webkit-animation: 1s forwards fadeIn;
-  -moz-animation: 1s forwards fadeIn;
-  -o-animation: 1s forwards fadeIn;
-  -ms-animation: 1s forwards fadeIn;
 }
 
 .background-fade-in {
   background-color: #2e3141;
   animation: 1s forwards backgroundFadeIn;
-  -moz-animation: 1s forwards backgroundFadeIn;
-}
-
-.delay-0 {
-  animation-delay: 0s;
-  -webkit-animation-delay: 0s;
-  -moz-animation-delay: 0s;
-  -o-animation-delay: 0s;
-  -ms-animation-delay: 0s;
-}
-
-.delay-1 {
-  animation-delay: 1s;
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  -o-animation-delay: 1s;
-  -ms-animation-delay: 1s;
-}
-
-.delay-2 {
-  animation-delay: 2s;
-  -webkit-animation-delay: 2s;
-  -moz-animation-delay: 2s;
-  -o-animation-delay: 2s;
-  -ms-animation-delay: 2s;
 }
 
 @keyframes fadeIn {
@@ -337,6 +325,7 @@ p {
     opacity: 1;
   }
 }
+
 @keyframes backgroundFadeIn {
   from {
     background-color: #2e3141;
@@ -346,42 +335,7 @@ p {
   }
 }
 
-@-moz-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-moz-keyframes backgroundFadeIn {
-  from {
-    background-color: #2e3141;
-  }
-  to {
-    background-color: transparent;
-  }
-}
-
 @-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-o-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-ms-keyframes fadeIn {
   0% {
     opacity: 0;
   }
@@ -434,7 +388,6 @@ mark {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  /* border: 1px solid red; */
 }
 
 .headshot {
@@ -592,7 +545,6 @@ results in it being out of line with the headshot */
 .home-contact {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/assets/img/Glacier-Natl-Park.jpg") #9f9f9f left 0% top 20% no-repeat;
-  /* background-blend-mode: color-burn; */
   background-size: 100% auto;
 }
 
