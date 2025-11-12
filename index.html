@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <title>Allison Truhlar's Portfolio</title>
-    <meta name="description" content="" />
+    <meta name="description" content="Full-stack software engineer at HHMI Janelia, specializing in React, TypeScript, Python, and Docker. View my portfolio of scientific web applications." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="og:title" content="" />
-    <meta property="og:type" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
+    <meta property="og:title" content="Allison Truhlar - Full-Stack Software Engineer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://allison-truhlar.github.io/" />
+    <meta property="og:image" content="https://allison-truhlar.github.io/assets/img/Allison-Truhlar-headshot.png" />
+    <meta property="og:description" content="Full-stack software engineer specializing in React, TypeScript, Python, and Docker. Building web applications for scientific research at HHMI Janelia." />
 
     <link rel="manifest" href="site.webmanifest" />
     <!-- <link rel="apple-touch-icon" href="icon.png"> -->
@@ -23,6 +24,8 @@
       rel="stylesheet"
     />
 
+    <link rel="preload" as="image" href="/assets/img/edited-river-pic.png" />
+
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
 
@@ -30,6 +33,7 @@
   </head>
 
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
       <div class="display-container">
         <nav class="nav-bar">
@@ -46,7 +50,7 @@
           </ul>
         </nav>
 
-        <div id="menu-btn" class="menu-btn">
+        <div id="menu-btn" class="menu-btn" role="button" aria-label="Toggle navigation menu" aria-expanded="false" tabindex="0">
           <div class="btn-line"></div>
           <div class="btn-line"></div>
           <div class="btn-line"></div>
@@ -87,7 +91,7 @@
       </svg>
     </section>
 
-    <main>
+    <main id="main-content">
       <section id="about" class="display-container about-section appear">
         <div class="about-section-header-container">
           <h2 class="section-header">About Me</h2>
@@ -130,14 +134,14 @@
               <img
                 src="./assets/img/ossi-project-page-light.png"
                 loading="lazy"
-                alt="Screenshot of the HHMI Open Source Science Intiative (OSSI) project page. At the top is the navigation bar with links to home, projects, and OSSI, and a theme toggle button. Beneath this, on the left, is a keyword search input. To the right of this are buttons to filter by OSSI funding status. Beneath the keyword search input is a menu of tags by which to filter projects. Finally, to the right of the filter menu and beneath the funding status buttons, are two project cards."
+                alt="Screenshot of the HHMI Open Source Science Initiative (OSSI) project page. At the top is the navigation bar with links to home, projects, and OSSI, and a theme toggle button. Beneath this, on the left, is a keyword search input. To the right of this are buttons to filter by OSSI funding status. Beneath the keyword search input is a menu of tags by which to filter projects. Finally, to the right of the filter menu and beneath the funding status buttons, are two project cards."
               />
             </div>
             <div class="project-card-description-container">
-              <h3>Janelia Open Source Science Intiative website</h3>
+              <h3>Janelia Open Source Science Initiative website</h3>
               <p class="section-content">
                 A portfolio showcasing software developed at the Howard Hughes
-                Medical Institute’s Janelia Research Campus.
+                Medical Institute's Janelia Research Campus.
               </p>
 
               <div class="project-card-skill-container">
@@ -160,7 +164,7 @@
                   >
                 </div>
                 <div class="project-link-wrapper">
-                  <a class="project-link-text" href="https://ossi.janelia.org"
+                  <a class="project-link-text" href="https://ossi.janelia.org" target="_blank" rel="noopener"
                     >Live Site</a
                   >
                 </div>
@@ -168,6 +172,8 @@
                   <a
                     class="project-link-text"
                     href="https://github.com/JaneliaSciComp/ossi-website"
+                    target="_blank"
+                    rel="noopener"
                     >Source Code</a
                   >
                 </div>
@@ -255,17 +261,6 @@
 
           <div class="project-card">
             <div class="project-card-img-container">
-              <!-- <img
-                src="./assets/img/wormbot-device-control-page.png"
-                loading="lazy"
-                alt="Screenshot of the device control page in the
-              Wormbot user interface. This page allows is automatically
-              populated with all device controls exposed by the hardware
-              developer. This image shows test inputs for the camera settings,
-              taking images, transfering files to the network attached storage
-              (NAS), and previewing the current camera view. There is also a log
-              section at the bottom of the screen."
-              /> -->
             </div>
             <div class="project-card-description-container">
               <h3>Mitoception</h3>
@@ -328,6 +323,7 @@
               class="icon-item"
               href="https://www.linkedin.com/in/allison-truhlar/"
               target="_blank"
+              rel="noopener"
             >
               <div class="icon-container">
                 <img
@@ -342,6 +338,7 @@
               class="icon-item"
               href="https://github.com/allison-truhlar"
               target="_blank"
+              rel="noopener"
             >
               <div class="icon-container">
                 <img
