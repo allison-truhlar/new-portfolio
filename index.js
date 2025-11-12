@@ -9,10 +9,12 @@ let isDropdownVisible = false;
 menuBtn.addEventListener('click', () => {
     if (isDropdownVisible) {
         menuBtn.classList.remove("change")
+        menuBtn.setAttribute('aria-expanded', 'false')
         dropdown.style.display = "none"
         isDropdownVisible = false
-    } else if (!isDropdownVisible) {
+    } else {
         menuBtn.classList.add('change');
+        menuBtn.setAttribute('aria-expanded', 'true')
         dropdown.style.display = "flex"
         isDropdownVisible = true
     }
@@ -27,7 +29,7 @@ const delayAppearCallback = function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('delay-inview');
-        } else if (entry.isIntersecting && entry.target.classList.contains('delay-inview' || 'inview')) {
+        } else if (entry.isIntersecting && (entry.target.classList.contains('delay-inview') || entry.target.classList.contains('inview'))) {
             entry.unobserve(entry.target);
         }
     });
@@ -37,7 +39,7 @@ const appearCallback = function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('inview');
-        } else if (entry.isIntersecting && entry.target.classList.contains('delay-inview' || 'inview')) {
+        } else if (entry.isIntersecting && (entry.target.classList.contains('delay-inview') || entry.target.classList.contains('inview'))) {
             entry.unobserve(entry.target);
         }
     });
@@ -65,18 +67,3 @@ if (homeHero) {
 } else {
     appearItems.forEach(item => sectionsObserver.observe(item));
 }
-
-// Code to change "what next" icon to "your tech stack"
-const skillDiv = document.getElementById("skill-change")
-const skillIcon = document.getElementById("skill-change-icon")
-const skillText = document.getElementById("skill-change-text")
-
-skillDiv.addEventListener("mouseover", () => {
-    skillIcon.style.backgroundImage="url('https://img.icons8.com/ffffff/ios/50/sheets.png')"
-    skillText.innerText="Your stack!"
-})
-
-skillDiv.addEventListener("mouseout", () => {
-    skillIcon.style.backgroundImage="url('https://img.icons8.com/ffffff/ios/50/where.png')"
-    skillText.innerText="What next?"
-})
