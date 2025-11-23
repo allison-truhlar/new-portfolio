@@ -106,7 +106,7 @@ html {
   height: 100%;
   font-size: calc(15px + 0.390625vw);
   background-color: #3f4e85;
-  color: #ffffff;
+  color: #fdf7eb;
   font-family: "Raleway", sans-serif;
   letter-spacing: 0.015rem;
   line-height: 1.5;
@@ -179,7 +179,7 @@ header {
 }
 
 .nav-links a {
-  color: #fff;
+  color: #fdf7eb;
   font-size: 0.9rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -209,7 +209,7 @@ header {
 .btn-line {
   width: 25px;
   height: 3px;
-  background-color: white;
+  background-color: #fdf7eb;
   margin: 3px 0;
   border-radius: 4px;
   transition: transform 0.3s ease;
@@ -296,7 +296,7 @@ header {
   font-size: 1.5rem;
   font-weight: 500;
   text-transform: uppercase;
-  border-bottom: #ffffff 2px solid;
+  border-bottom: #fdf7eb 2px solid;
 }
 
 p {
@@ -510,13 +510,13 @@ results in it being out of line with the headshot */
 .project-link-wrapper {
   align-self: flex-start;
   border-radius: 6.25rem;
-  border: 1px solid #fff;
+  border: 1px solid #fdf7eb;
   padding: 0.4rem 0.7rem;
   transition: transform 0.3s;
 }
 
 .project-link-text {
-  color: #fff;
+  color: #fdf7eb;
   font-size: 0.7rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -525,7 +525,7 @@ results in it being out of line with the headshot */
 
 .project-link-text:hover,
 .project-link-text:focus {
-  text-decoration: underline solid #fff 1px;
+  text-decoration: underline solid #fdf7eb 1px;
   text-underline-offset: 0.2rem;
 }
 
