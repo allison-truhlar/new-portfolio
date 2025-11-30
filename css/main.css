@@ -114,8 +114,12 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 85%;
+  max-width: 85%;
   margin-block: auto;
+}
+
+#main-content {
+  width: 100%;
 }
 
 /* Appear */
@@ -423,65 +427,68 @@ results in it being out of line with the headshot */
 }
 
 /* Project section styles */
-.project-cards-wrapper {
-  display: block;
-}
-
 .project-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
   margin: 0 0 2rem 0;
-  padding: 1rem;
-  width: 100%;
-  height: 30rem;
+  padding: 2rem;
+  max-width: 100%;
   border-radius: 5px;
   background-color: #4c5c96;
+  transition: 300ms ease-in-out;
 }
 
-.project-card-img-container {
+.project-card:hover,
+.project-card:focus {
+  transform: scale(1.05);
+  transition: 300ms ease-in-out;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.project-card a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.project-card-inner-container {
   display: flex;
-  max-height: 45%;
-  width: 85%;
+  flex-direction: column;
+  gap: 1rem;
+  align-self: start;
+  align-items: left;
 }
 
-.project-card-img-container > img,
+.project-card-inner-container > img,
 .project-page-img > img {
-  width: 100%;
+  max-width: 100%;
   max-height: 100%;
   border-radius: 5px;
   object-fit: cover;
   object-position: 0% 0%;
 }
 
-.project-card-description-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
-  min-height: 50%;
-  max-width: 85%;
-}
-
-.project-card-description-container h3,
-.project-card-description-container .section-content {
+.project-card-inner-container h3,
+.project-card-inner-container .section-content {
   padding: 0;
   margin: 0;
 }
 
-.project-card-skill-container,
-.project-links-container {
-  display: flex;
+.project-card-inner-container.skill-container{
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .skill-tag {
   display: flex;
-  width: 4rem;
-  height: 1.4rem;
-  background: white;
+  padding: 0.3rem 0.6rem;
+  background: #fdf7eb;
   border-radius: 10px;
 }
 
@@ -494,6 +501,7 @@ results in it being out of line with the headshot */
 
 .project-link-wrapper {
   align-self: flex-start;
+  background-color: #fdf7eb;
   border-radius: 6.25rem;
   border: 1px solid #fdf7eb;
   padding: 0.4rem 0.7rem;
@@ -501,7 +509,7 @@ results in it being out of line with the headshot */
 }
 
 .project-link-text {
-  color: #fdf7eb;
+  color: #4c5c96;
   font-size: 0.7rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -510,14 +518,8 @@ results in it being out of line with the headshot */
 
 .project-link-text:hover,
 .project-link-text:focus {
-  text-decoration: underline solid #fdf7eb 1px;
+  text-decoration: underline solid #4c5c96 1px;
   text-underline-offset: 0.2rem;
-}
-
-.project-link-wrapper:hover,
-.project-link-wrapper:focus {
-  background: #3f4e85 20%;
-  transform: scale(1.05);
 }
 
 /* Contact styles */
@@ -674,6 +676,10 @@ code {
 
   .project-card {
     padding: 1.5rem;
+  }
+
+  .project-cards-wrapper {
+      display: grid;
   }
 }
 
