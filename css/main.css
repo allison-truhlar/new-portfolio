@@ -258,11 +258,13 @@ header {
   background-color: #fdf7eb;
 }
 
-.home-hero-img-container > :last-child {
+.home-hero-img-container > :last-child,
+.contact > :last-child {
   margin-top: -70px;
 }
 
-.home-hero-img {
+.home-hero-img,
+.contact img {
   width: 100%;
 }
 
@@ -479,7 +481,7 @@ results in it being out of line with the headshot */
   margin: 0;
 }
 
-.project-card-inner-container.skill-container{
+.project-card-inner-container.skill-container {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -525,26 +527,33 @@ results in it being out of line with the headshot */
 /* Contact styles */
 
 .contact {
-  position: relative;
-  margin-top: 3rem;
+  margin-top: 1rem;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
-.home-contact {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/assets/img/Glacier-Natl-Park.jpg") #9f9f9f left 0% top 20% no-repeat;
-  background-size: 100% auto;
+.contact > :first-child {
+  margin-bottom: -60px;
 }
 
-.contact > svg {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 6rem;
+.contact > :last-child {
+  margin-top: -150px;
+}
+
+.contact section {
+  width: 100vw;
+  margin: auto;
+  background-color: #2e3141;
+  z-index: 2;
+}
+
+.contact-section-container {
+  width: 85%;
+  margin: auto;
 }
 
 .contact .heading-white-underline {
-  margin-top: 4rem;
   display: inline-block;
 }
 
@@ -679,7 +688,7 @@ code {
   }
 
   .project-cards-wrapper {
-      display: grid;
+    display: grid;
   }
 }
 
