@@ -1,23 +1,37 @@
 // Code for dropdown menu
-const menuBtn = document.getElementById('menu-btn');
-const dropdown = document.getElementById('nav-dropdown-link-container');
+const menuBtn = document.getElementById("menu-btn");
+const dropdown = document.querySelector(".nav-dropdown");
 
 // Initialize default value for showDropdown
 let isDropdownVisible = false;
 
 // Toggle the dropdown menu on smaller screens and animate the hamburger menu
-menuBtn.addEventListener('click', () => {
-    if (isDropdownVisible) {
-        menuBtn.classList.remove("change")
-        menuBtn.setAttribute('aria-expanded', 'false')
-        dropdown.style.display = "none"
-        isDropdownVisible = false
-    } else {
-        menuBtn.classList.add('change');
-        menuBtn.setAttribute('aria-expanded', 'true')
-        dropdown.style.display = "flex"
-        isDropdownVisible = true
-    }
+menuBtn.addEventListener("click", () => {
+  if (isDropdownVisible) {
+    menuBtn.classList.remove("change");
+    menuBtn.setAttribute("aria-expanded", "false");
+    dropdown.style.display = "none";
+    isDropdownVisible = false;
+  } else {
+    menuBtn.classList.add("change");
+    menuBtn.setAttribute("aria-expanded", "true");
+    dropdown.style.display = "flex";
+    isDropdownVisible = true;
+  }
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", (e) => {
+  if (
+    isDropdownVisible &&
+    !menuBtn.contains(e.target) &&
+    !dropdown.contains(e.target)
+  ) {
+    menuBtn.classList.remove("change");
+    menuBtn.setAttribute("aria-expanded", "false");
+    dropdown.style.display = "none";
+    isDropdownVisible = false;
+  }
 });
 
 
