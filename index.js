@@ -34,50 +34,59 @@ document.addEventListener("click", (e) => {
   }
 });
 
-
 // Code to watch for when a div with class home-appear enters the screen
 // Following this article: https://dev.to/miacan2021/fade-in-animation-on-scroll-with-intersectionobserver-vanilla-js-4p27
-const appearItems = document.querySelectorAll('.appear');
+const appearItems = document.querySelectorAll(".appear");
 
 const delayAppearCallback = function (entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('delay-inview');
-        } else if (entry.isIntersecting && (entry.target.classList.contains('delay-inview') || entry.target.classList.contains('inview'))) {
-            entry.unobserve(entry.target);
-        }
-    });
-}
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("delay-inview");
+    } else if (
+      entry.isIntersecting &&
+      (entry.target.classList.contains("delay-inview") ||
+        entry.target.classList.contains("inview"))
+    ) {
+      entry.unobserve(entry.target);
+    }
+  });
+};
 
 const appearCallback = function (entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('inview');
-        } else if (entry.isIntersecting && (entry.target.classList.contains('delay-inview') || entry.target.classList.contains('inview'))) {
-            entry.unobserve(entry.target);
-        }
-    });
-}
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("inview");
+    } else if (
+      entry.isIntersecting &&
+      (entry.target.classList.contains("delay-inview") ||
+        entry.target.classList.contains("inview"))
+    ) {
+      entry.unobserve(entry.target);
+    }
+  });
+};
 
 const delayHomeSectionsObserver = new IntersectionObserver(delayAppearCallback);
-const sectionsObserver = new IntersectionObserver(appearCallback, { threshold: 0.2 });
+const sectionsObserver = new IntersectionObserver(appearCallback, {
+  threshold: 0.2,
+});
 
 const homeHero = document.querySelector(".home-hero");
 
 if (homeHero) {
-    const homeCallback = function (entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                sectionsObserver.disconnect();
-                appearItems.forEach(item => delayHomeSectionsObserver.observe(item));
-            } else {
-                delayHomeSectionsObserver.disconnect();
-                appearItems.forEach(item => sectionsObserver.observe(item));
-            }
-        });
-    };
-    const homeHeroObserver = new IntersectionObserver(homeCallback);
-    homeHeroObserver.observe(homeHero);
+  const homeCallback = function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        sectionsObserver.disconnect();
+        appearItems.forEach((item) => delayHomeSectionsObserver.observe(item));
+      } else {
+        delayHomeSectionsObserver.disconnect();
+        appearItems.forEach((item) => sectionsObserver.observe(item));
+      }
+    });
+  };
+  const homeHeroObserver = new IntersectionObserver(homeCallback);
+  homeHeroObserver.observe(homeHero);
 } else {
-    appearItems.forEach(item => sectionsObserver.observe(item));
+  appearItems.forEach((item) => sectionsObserver.observe(item));
 }
