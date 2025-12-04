@@ -31,8 +31,8 @@
   </head>
 
   <body>
-    <header>
-      <div class="display-container">
+    <div class="display-container">
+      <header class="header">
         <nav class="nav-bar">
           <ul class="nav-bar-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
@@ -53,7 +53,7 @@
           <div class="btn-line"></div>
         </div>
 
-        <nav id="nav-dropdown" class="nav-dropdown display-container">
+        <nav id="nav-dropdown" class="nav-dropdown">
           <ul class="nav-dropdown-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../index.html/#about">About</a></li>
@@ -66,34 +66,34 @@
             </li>
           </ul>
         </nav>
-      </div>
-    </header>
-    <section class="project-hero hero">
-      <div class="display-container">
-        <div class="hero-text">
-          <h1 class="heading-white-underline">Fileglancer</h1>
-          <p>
-            Fileglancer is a web application for scientific researchers at the
-            Howard Hughes Medical Institute's Janelia Research Campus to browse,
-            share, and visualize large imaging datasets on network file systems.
-            I was responsible for implementing the frontend using React, React
-            Router, and TypeScript, including building frontend unit tests with
-            Vitest and React Testing Library and integration tests using Vitest
-            and Playwright.
-          </p>
-        </div>
-      </div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <polygon fill="#3F4E85" points="0,100 100,0 100,100" />
-      </svg>
-    </section>
+      </header>
 
-    <main>
-      <div class="display-container flex">
+      <section class="project-hero hero">
+        <img
+          class="home-hero-img"
+          src="/assets/img/top_ripped_paper_beige.png"
+        />
+        <div class="hero-background">
+          <div class="hero-text header-footer-inner-container">
+            <h1 class="heading-white-underline">Fileglancer</h1>
+            <p>
+              Fileglancer is a web application for scientific researchers at the
+              Howard Hughes Medical Institute's Janelia Research Campus to
+              browse, share, and visualize large imaging datasets on network
+              file systems. I was responsible for implementing the frontend
+              using React, React Router, and TypeScript, including building
+              frontend unit tests with Vitest and React Testing Library and
+              integration tests using Vitest and Playwright.
+            </p>
+          </div>
+        </div>
+        <img
+          class="home-hero-img"
+          src="/assets/img/bottom_ripped_paper_beige.png"
+        />
+      </section>
+
+      <main class="flex">
         <div class="project-page-img appear">
           <img
             src="../assets/img/fileglancer.png"
@@ -206,71 +206,72 @@
             </div>
           </div>
         </section>
+      </main>
+
+      <div id="contact" class="contact appear">
+        <img src="/assets/img/top_ripped_paper_dark.png" />
+        <section>
+          <div class="header-footer-inner-container">
+            <h2 class="heading-white-underline">Contact</h2>
+            <div class="section-content">
+              <p>
+                If you think I'm a good fit for an open position or you just
+                want to say hello, send a message! I look forward to hearing
+                from you.
+              </p>
+              <div class="icons-wrapper">
+                <a class="icon-item" href="mailto:amtruhlar@gmail.com">
+                  <div class="icon-container">
+                    <img
+                      src="../assets/icons/icons8-email-48.png"
+                      alt="Letter icon"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>Email</p>
+                </a>
+                <a
+                  class="icon-item"
+                  href="https://www.linkedin.com/in/allison-truhlar/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <div class="icon-container">
+                    <img
+                      src="../assets/icons/icons8-linkedin-48.png"
+                      alt="LinkedIn logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>LinkedIn</p>
+                </a>
+                <a
+                  class="icon-item"
+                  href="https://github.com/allison-truhlar"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <div class="icon-container">
+                    <img
+                      src="../assets/icons/icons8-github-48.png"
+                      alt="GitHub logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>GitHub</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <img src="/assets/img/bottom_ripped_paper_dark.png" />
       </div>
-    </main>
-    <div class="project-contact contact appear">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <polygon fill="#3F4E85" points="0,0 100,0 100,100" />
-      </svg>
-      <section class="display-container">
-        <h2 class="project-contact-header section-header">Contact</h2>
 
-        <p class="section-content">
-          If you think I'm a good fit for an open position or you just want to
-          say hello, send a message! I look forward to hearing from you.
-        </p>
-        <div class="icons-wrapper">
-          <a class="icon-item" href="mailto:amtruhlar@gmail.com">
-            <div class="icon-container">
-              <img
-                src="../assets/icons/icons8-email-48.png"
-                alt="Letter icon"
-                loading="lazy"
-              />
-            </div>
-            <p>Email</p>
-          </a>
-          <a
-            class="icon-item"
-            href="https://www.linkedin.com/in/allison-truhlar/"
-            target="_blank"
-          >
-            <div class="icon-container">
-              <img
-                src="../assets/icons/icons8-linkedin-48.png"
-                alt="LinkedIn logo"
-                loading="lazy"
-              />
-            </div>
-            <p>LinkedIn</p>
-          </a>
-          <a
-            class="icon-item"
-            href="https://github.com/allison-truhlar"
-            target="_blank"
-          >
-            <div class="icon-container">
-              <img
-                src="../assets/icons/icons8-github-48.png"
-                alt="GitHub logo"
-                loading="lazy"
-              />
-            </div>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </section>
+      <footer>
+        <p>Built by Allison Truhlar | 2025</p>
+        <p>Icons by <a href="https://icons8.com">Icons8</a></p>
+      </footer>
     </div>
-
-    <footer>
-      <p>Built by Allison Truhlar | 2025</p>
-      <p>Icons by <a href="https://icons8.com">Icons8</a></p>
-    </footer>
-
     <script src="../index.js"></script>
   </body>
 </html>
