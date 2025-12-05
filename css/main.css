@@ -651,7 +651,7 @@ footer a {
 .project-page-img {
   align-self: center;
   margin-top: 3rem;
-  max-width: 75%;
+  width: 100%;
   border-radius: 5px;
 }
 
@@ -662,12 +662,18 @@ footer a {
   border-bottom: solid #6371a3 2px;
 }
 
+.project-subheader {
+  text-decoration: none;
+}
+
 .project-section-content {
   margin-bottom: 1rem;
 }
 
-.project-msg-btn {
+.project-links-container {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .bold {
