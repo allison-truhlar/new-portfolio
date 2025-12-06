@@ -91,7 +91,7 @@ html {
   font-size: calc(15px + 0.390625vw);
   background-color: #3f4e85;
   color: #fdf7eb;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   letter-spacing: 0.015rem;
   line-height: 1.5;
 }
@@ -245,9 +245,8 @@ header {
 
 .home-hero {
   display: flex;
-  justify-content: center;
   margin: 0;
-  height: 250px;
+  height: 310px;
   width: 100vw;
   position: relative;
 }
@@ -255,10 +254,6 @@ header {
 .home-hero-img-container {
   display: flex;
   flex-direction: column;
-}
-
-.home-hero-img-container > :first-child {
-  margin-bottom: -70px;
 }
 
 .home-hero-img-container > :nth-child(2) {
@@ -281,8 +276,32 @@ header {
   width: 100%;
 }
 
+.home-hero-text-container {
+  position: absolute;
+  top: 13%;
+  left: 7.5%;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  width: 85%;
+}
+
+.home-hero-text-container > :first-child {
+  align-self: flex-start;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.home-hero-text-container > :last-child {
+  align-self: flex-end;
+  font-size: 1.5rem;
+}
+
 .home-hero-text {
-  display: none;
+  font-family: "Caveat", cursive;
+  font-weight: 400;
+  color: #4c5c96;
+  margin: 0;
 }
 
 .hero-text {
@@ -290,14 +309,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: start;
-}
-
-.heading-white-underline {
-  margin: 0 0 0.4rem 0;
-  font-size: 1.5rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  border-bottom: #fdf7eb 2px solid;
 }
 
 p {
@@ -352,8 +363,9 @@ section {
 .section-header {
   margin: 0;
   padding-bottom: 2rem;
-  font-size: 1.375rem;
-  font-weight: 500;
+  font-family: "Caveat", cursive;
+  font-size: 1.75rem;
+  font-weight: 700;
   text-transform: uppercase;
   text-decoration: underline solid #6371a3 2px;
   text-underline-offset: 0.6rem;
