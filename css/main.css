@@ -246,7 +246,7 @@ header {
 .home-hero {
   display: flex;
   margin: 0;
-  height: 310px;
+  height: 315px;
   width: 100vw;
   position: relative;
 }
@@ -293,7 +293,6 @@ header {
 .home-hero-text-container > :first-child {
   align-self: flex-start;
   font-size: 3rem;
-  line-height: 1;
 }
 
 .home-hero-text-container > :last-child {
@@ -306,6 +305,7 @@ header {
   font-weight: 400;
   color: #4c5c96;
   margin: 0;
+  line-height: 1;
 }
 
 .hero-text {
