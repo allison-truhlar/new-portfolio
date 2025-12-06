@@ -30,9 +30,9 @@
     <meta name="theme-color" content="#fafafa" />
   </head>
 
-  <body>
-    <header>
-      <div class="display-container">
+<body>
+    <div class="display-container">
+      <header class="header">
         <nav class="nav-bar">
           <ul class="nav-bar-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
@@ -53,7 +53,7 @@
           <div class="btn-line"></div>
         </div>
 
-        <nav id="nav-dropdown" class="nav-dropdown display-container">
+        <nav id="nav-dropdown" class="nav-dropdown">
           <ul class="nav-dropdown-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../index.html/#about">About</a></li>
@@ -66,34 +66,34 @@
             </li>
           </ul>
         </nav>
-      </div>
-    </header>
-    <section class="project-hero hero">
-      <div class="display-container">
-        <div class="hero-text">
-          <h1 class="heading-white-underline">Mitoception</h1>
-          <p>
-            Mitoception is a web application for scientific researchers to
-            analyze mitochondria images using a machine learning model developed
-            by the Meng Wang Lab at Janelia. I was responsible for creating the
-            original application using a server-side PyTorch implementation. I
-            later added a client-side ONNX Runtime Web implementation, enabling
-            in-browser inference without server dependencies. I built the app
-            using React on the frontend and FastAPI on the backend.
-          </p>
-        </div>
-      </div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <polygon fill="#3F4E85" points="0,100 100,0 100,100" />
-      </svg>
-    </section>
+      </header>
 
-    <main>
-      <div class="display-container flex">
+      <section class="project-hero hero">
+        <img
+          class="home-hero-img"
+          src="/assets/img/top_ripped_paper_beige.png"
+        />
+        <div class="hero-background">
+          <div class="header-footer-inner-container">
+            <h1 class="hero-text">Mitoception</h1>
+            <ul>
+              <li>
+                <span>Goal:</span> Analyze images using an ML model on the client or server
+              </li>
+              <li><span>Role:</span> Full Stack Developer</li>
+              <li>
+                <span>Technologies:</span> React, Python, FastAPI, Docker
+              </li>
+            </ul>
+          </div>
+        </div>
+        <img
+          class="home-hero-img"
+          src="/assets/img/bottom_ripped_paper_beige.png"
+        />
+      </section>
+
+      <main class="flex">
         <div class="project-page-img appear">
           <!-- <img
             src="../assets/img/mitoception.png"
@@ -109,7 +109,7 @@
             Mitoception is a web application that provides a user interface for
             a machine learning model developed by Haining Zhang in the Meng Wang
             lab at Howard Hughes Medical Institute's Janelia Research Campus.
-            The application enables researchers to upload <em>>C. elegans</em>
+            The application enables researchers to upload <em>C. elegans</em>
             mitochondria images and receive automated classifications.
           </p>
           <p class="project-section-content section-content">
@@ -201,67 +201,66 @@
             overlays and downloadable CSV files for further analysis.
           </p>
         </section>
-
-        <section class="appear">
-      </div>
     </main>
-    <div class="project-contact contact appear">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <polygon fill="#3F4E85" points="0,0 100,0 100,100" />
-      </svg>
-      <section class="display-container">
-        <h2 class="project-contact-header section-header">Contact</h2>
 
-        <p class="section-content">
-          If you think I'm a good fit for an open position or you just want to
-          say hello, send a message! I look forward to hearing from you.
-        </p>
-        <div class="icons-wrapper">
-          <a class="icon-item" href="mailto:amtruhlar@gmail.com">
-            <div class="icon-container">
-              <img
-                src="../assets/icons/icons8-email-48.png"
-                alt="Letter icon"
-                loading="lazy"
-              />
+   <div id="contact" class="contact appear">
+        <img src="/assets/img/top_ripped_paper_dark.png" />
+        <section>
+          <div class="header-footer-inner-container">
+            <h2 class="section-header">Contact</h2>
+            <div class="section-content">
+              <p>
+                If you think I'm a good fit for an open position or you just
+                want to say hello, send a message! I look forward to hearing
+                from you.
+              </p>
+              <div class="icons-wrapper">
+                <a class="icon-item" href="mailto:amtruhlar@gmail.com">
+                  <div class="icon-container">
+                    <img
+                      src="../assets/icons/icons8-email-48.png"
+                      alt="Letter icon"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>Email</p>
+                </a>
+                <a
+                  class="icon-item"
+                  href="https://www.linkedin.com/in/allison-truhlar/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <div class="icon-container">
+                    <img
+                      src="../assets/icons/icons8-linkedin-48.png"
+                      alt="LinkedIn logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>LinkedIn</p>
+                </a>
+                <a
+                  class="icon-item"
+                  href="https://github.com/allison-truhlar"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <div class="icon-container">
+                    <img
+                      src="../assets/icons/icons8-github-48.png"
+                      alt="GitHub logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>GitHub</p>
+                </a>
+              </div>
             </div>
-            <p>Email</p>
-          </a>
-          <a
-            class="icon-item"
-            href="https://www.linkedin.com/in/allison-truhlar/"
-            target="_blank"
-          >
-            <div class="icon-container">
-              <img
-                src="../assets/icons/icons8-linkedin-48.png"
-                alt="LinkedIn logo"
-                loading="lazy"
-              />
-            </div>
-            <p>LinkedIn</p>
-          </a>
-          <a
-            class="icon-item"
-            href="https://github.com/allison-truhlar"
-            target="_blank"
-          >
-            <div class="icon-container">
-              <img
-                src="../assets/icons/icons8-github-48.png"
-                alt="GitHub logo"
-                loading="lazy"
-              />
-            </div>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </section>
-    </div>
+          </div>
+        </section>
+        <img src="/assets/img/bottom_ripped_paper_dark.png" />
+      </div>
 
     <footer>
       <p>Built by Allison Truhlar | 2025</p>
