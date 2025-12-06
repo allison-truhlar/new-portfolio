@@ -142,6 +142,17 @@ img {
   transition-delay: 0.8s;
 }
 
+.hero-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-family: "Caveat", cursive;
+  font-weight: 400;
+  color: #4c5c96;
+  margin: 0;
+}
+
 /* Navbar styles */
 header {
   display: flex;
