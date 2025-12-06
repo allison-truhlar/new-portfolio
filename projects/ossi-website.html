@@ -43,8 +43,8 @@
   </head>
 
   <body>
-    <header>
-      <div class="display-container">
+    <div class="display-container">
+      <header class="header">
         <nav class="nav-bar">
           <ul class="nav-bar-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
@@ -65,7 +65,7 @@
           <div class="btn-line"></div>
         </div>
 
-        <nav id="nav-dropdown" class="nav-dropdown display-container">
+        <nav id="nav-dropdown" class="nav-dropdown">
           <ul class="nav-dropdown-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../index.html/#about">About</a></li>
@@ -78,42 +78,62 @@
             </li>
           </ul>
         </nav>
-      </div>
-    </header>
+      </header>
 
-    <section class="project-hero hero">
-      <div class="display-container">
-        <div class="hero-text">
-          <h1 class="heading-white-underline">
-            Janelia Open Source Science Intiative website
-          </h1>
-          <p>
-            The Janelia Open Source Science Initiative (OSSI) website portfolio
-            showcases software developed at the Howard Hughes Medical
-            Institute’s Janelia Research Campus. I designed the site with Figma
-            and built the site with AstroJS, incorporating React components for
-            user interactivity, Nano Stores for state management, and Tailwind
-            for styling.
-          </p>
+      <section class="project-hero hero">
+        <img
+          class="home-hero-img"
+          src="/assets/img/top_ripped_paper_beige.png"
+        />
+        <div class="hero-background">
+          <div class="header-footer-inner-container">
+            <h1 class="hero-text">Janelia Open Source Science Intiative website</h1>
+            <ul>
+              <li>
+                <span>Goal:</span> Create a modern portfolio of software developed at Janelia
+              </li>
+              <li><span>Role:</span> Frontend Developer</li>
+              <li>
+                <span>Technologies:</span> React, AstroJS, Tailwind CSS, Nano Stores
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <polygon fill="#3F4E85" points="0,100 100,0 100,100" />
-      </svg>
-    </section>
+        <img
+          class="home-hero-img"
+          src="/assets/img/bottom_ripped_paper_beige.png"
+        />
+      </section>
 
-    <main>
-      <div class="display-container flex">
+      <main class="flex">
         <div class="project-page-img appear">
           <img
             src="../assets/img/ossi-project-page-light.png"
             alt="Screenshot of the project page. At the top is the navigation bar with links to home, projects, and OSSI, and a theme toggle button. Beneath this, on the left, is a keyword search input. To the right of this are buttons to filter by OSSI funding status. Beneath the keyword search input is a menu of tags by which to filter projects. Finally, to the right of the filter menu and beneath the funding status buttons, are two project cards."
           />
         </div>
+
+        <section class="appear">
+          <h2 class="project-section-header section-header">View Project</h2>
+          <div class="project-links-container">
+            <div class="project-link-wrapper">
+              <a
+                href="https://ossi.janelia.org"
+                class="project-link-text"
+                target="_blank"
+                >Live Site</a
+              >
+            </div>
+            <div class="project-link-wrapper">
+              <a
+                href="https://github.com/JaneliaSciComp/ossi-website"
+                class="project-link-text"
+                target="_blank"
+                >Source Code</a
+              >
+            </div>
+          </div>
+        </section>
 
         <section class="appear">
           <h2 class="project-section-header section-header">
@@ -151,7 +171,7 @@
             Implementing this core feature required overcoming several technical
             hurdles:
           </p>
-          <h3>Astro islands and state management</h3>
+          <h3 class="project-subheader">Astro islands and state management</h3>
           <p class="project-section-content section-content">
             AstroJS strips the JavaScript out of all components of the site
             except for “island” components. This means the parent of React
@@ -167,7 +187,7 @@
             the static projects route. This meant implementing the Nano Stores
             library, recommended by Astro, for state management.
           </p>
-          <h3>Linting of tags via GitHub actions</h3>
+          <h3 class="project-subheader">Linting of tags via GitHub actions</h3>
           <p class="project-section-content section-content">
             Due to the site being open source, I needed to add a means of
             ensuring all the tags added by contributors matched those allowed on
@@ -210,93 +230,72 @@
               class="project-link-text"
               target="_blank"
               >Janelia Open Source Science Initiative (OSSI)</a
-            >
+            >.
             Users have shared positive feedback, for example stating that the
             site "is both beautiful and so useful."
           </p>
         </section>
-
-        <section class="appear">
-          <h2 class="project-section-header section-header">View Project</h2>
-          <div class="project-links-container">
-            <div class="project-link-wrapper">
-              <a
-                href="https://ossi.janelia.org"
-                class="project-link-text"
-                target="_blank"
-                >Live Site</a
-              >
-            </div>
-            <div class="project-link-wrapper">
-              <a
-                href="https://github.com/JaneliaSciComp/ossi-website"
-                class="project-link-text"
-                target="_blank"
-                >Source Code</a
-              >
-            </div>
-          </div>
-        </section>
       </div>
     </main>
 
-    <div class="project-contact contact appear">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <polygon fill="#3F4E85" points="0,0 100,0 100,100" />
-      </svg>
-      <section class="display-container">
-        <h2 class="project-contact-header section-header">Contact</h2>
-
-        <p class="section-content">
-          If you think I'm a good fit for an open position or you just want to
-          say hello, send a message! I look forward to hearing from you.
-        </p>
-        <div class="icons-wrapper">
-          <a class="icon-item" href="mailto:amtruhlar@gmail.com">
-            <div class="icon-container">
-              <img
-                src="../assets/icons/icons8-email-48.png"
-                alt="Letter icon"
-                loading="lazy"
-              />
+    <div id="contact" class="contact appear">
+        <img src="/assets/img/top_ripped_paper_dark.png" />
+        <section>
+          <div class="header-footer-inner-container">
+            <h2 class="section-header">Contact</h2>
+            <div class="section-content">
+              <p>
+                If you think I'm a good fit for an open position or you just
+                want to say hello, send a message! I look forward to hearing
+                from you.
+              </p>
+              <div class="icons-wrapper">
+                <a class="icon-item" href="mailto:amtruhlar@gmail.com">
+                  <div class="icon-container">
+                    <img
+                      src="../assets/icons/icons8-email-48.png"
+                      alt="Letter icon"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>Email</p>
+                </a>
+                <a
+                  class="icon-item"
+                  href="https://www.linkedin.com/in/allison-truhlar/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <div class="icon-container">
+                    <img
+                      src="../assets/icons/icons8-linkedin-48.png"
+                      alt="LinkedIn logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>LinkedIn</p>
+                </a>
+                <a
+                  class="icon-item"
+                  href="https://github.com/allison-truhlar"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <div class="icon-container">
+                    <img
+                      src="../assets/icons/icons8-github-48.png"
+                      alt="GitHub logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>GitHub</p>
+                </a>
+              </div>
             </div>
-            <p>Email</p>
-          </a>
-          <a
-            class="icon-item"
-            href="https://www.linkedin.com/in/allison-truhlar/"
-            target="_blank"
-          >
-            <div class="icon-container">
-              <img
-                src="../assets/icons/icons8-linkedin-48.png"
-                alt="LinkedIn logo"
-                loading="lazy"
-              />
-            </div>
-            <p>LinkedIn</p>
-          </a>
-          <a
-            class="icon-item"
-            href="https://github.com/allison-truhlar"
-            target="_blank"
-          >
-            <div class="icon-container">
-              <img
-                src="../assets/icons/icons8-github-48.png"
-                alt="GitHub logo"
-                loading="lazy"
-              />
-            </div>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </section>
-    </div>
+          </div>
+        </section>
+        <img src="/assets/img/bottom_ripped_paper_dark.png" />
+      </div>
 
     <footer>
       <p>Built by Allison Truhlar | 2025</p>
