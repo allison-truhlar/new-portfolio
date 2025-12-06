@@ -263,6 +263,10 @@ header {
   background-color: #fdf7eb;
 }
 
+.home-hero-img-container > :first-child {
+  margin-bottom: -5px;
+}
+
 .home-hero-img-container > :last-child {
   margin-top: -70px;
 }
