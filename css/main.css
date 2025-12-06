@@ -712,6 +712,12 @@ footer a {
   margin-bottom: 1rem;
 }
 
+.project-section-content a {
+  color: #fdf7eb;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
 .project-links-container {
   display: flex;
   flex-wrap: wrap;
