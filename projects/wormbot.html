@@ -43,8 +43,8 @@
   </head>
 
   <body>
-    <header>
-      <div class="display-container">
+    <div class="display-container">
+      <header class="header">
         <nav class="nav-bar">
           <ul class="nav-bar-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
@@ -59,20 +59,13 @@
           </ul>
         </nav>
 
-        <div
-          id="menu-btn"
-          class="menu-btn"
-          role="button"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-          tabindex="0"
-        >
+        <div id="menu-btn" class="menu-btn">
           <div class="btn-line"></div>
           <div class="btn-line"></div>
           <div class="btn-line"></div>
         </div>
 
-        <nav class="nav-dropdown display-container">
+        <nav id="nav-dropdown" class="nav-dropdown">
           <ul class="nav-dropdown-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../index.html/#about">About</a></li>
@@ -85,43 +78,42 @@
             </li>
           </ul>
         </nav>
-      </div>
-    </header>
+      </header>
 
-    <section class="project-hero hero">
-      <div class="display-container">
-        <div class="hero-text">
-          <h1 class="heading-white-underline">
-            Wormbot: A ROS-Enabled System for Managing Nematode Lifespan
-            Experiments
-          </h1>
-          <p>
-            I developed the web UI for the Wormbot system, and successfully
-            implemented the idea of using Robot Operating System (ROS) messaging
-            to allow scientists to use the UI to easily schedule and manage
-            imaging experiments. I built the web app with React Router and
-            Tailwind, the ROS nodes with Python, and used Docker for
-            containerization.
-          </p>
+      <section class="project-hero hero">
+        <img
+          class="home-hero-img"
+          src="/assets/img/top_ripped_paper_beige.png"
+        />
+        <div class="hero-background">
+          <div class="header-footer-inner-container">
+            <h1 class="hero-text">Wormbot</h1>
+            <ul>
+              <li>
+                <span>Goal:</span> A UI to schedule experiments and interface
+                with hardware
+              </li>
+              <li><span>Role:</span> Full Stack Developer</li>
+              <li>
+                <span>Technologies:</span> React, Tailwind, Python, ROS, Docker
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <polygon fill="#3F4E85" points="0,100 100,0 100,100" />
-      </svg>
-    </section>
+        <img
+          class="home-hero-img"
+          src="/assets/img/bottom_ripped_paper_beige.png"
+        />
+      </section>
 
-    <main>
-      <div class="display-container flex">
+      <main class="flex">
         <div class="project-page-img appear">
           <img
             src="../assets/img/wormbot-device-control-page.png"
             alt="Screenshot of the device control page in the Wormbot user interface. This page allows is automatically populated with all device controls exposed by the hardware developer. This image shows test inputs for the camera settings, taking images, transfering files to the network attached storage (NAS), and previewing the current camera view. There is also a log section at the bottom of the screen."
           />
         </div>
+
         <section class="appear">
           <h2 class="project-section-header section-header">
             Purpose and Goal
@@ -144,7 +136,7 @@
             cameras, robot, and storage hardware involved in the system.
           </p>
 
-          <h3>Core requirements</h3>
+          <h3 class="project-subheader">Core requirements</h3>
           <ul class="project-section-content section-content">
             <li>
               <span class="bold">Provide an intuitive web interface</span> –
@@ -194,7 +186,7 @@
           <h2 class="project-section-header section-header">
             Software Architecture and ROS Implementation
           </h2>
-          <h3>Why ROS?</h3>
+          <h3 class="project-subheader">Why ROS?</h3>
           <p class="project-section-content section-content">
             After evaluating options for inter-device communication, I selected
             the Robot Operating System (ROS) framework. My work builds on a
@@ -227,7 +219,7 @@
             </li>
           </ul>
 
-          <h3>System Components</h3>
+          <h3 class="project-subheader">System Components</h3>
           <p class="project-section-content section-content">
             The software system consists of:
           </p>
@@ -270,7 +262,7 @@
             Key Technical Achievements
           </h2>
 
-          <h3>
+          <h3 class="project-subheader">
             Streamlining Hardware Control Development Through Dynamic Function
             Discovery
           </h3>
@@ -325,7 +317,9 @@
             Haining to focus on hardware control rather than UI implementation.
           </p>
 
-          <h3>Containerization and Deployment Strategy</h3>
+          <h3 class="project-subheader">
+            Containerization and Deployment Strategy
+          </h3>
           <p class="project-section-content section-content">
             To streamline development, deployment, and maintenance across
             multiple Raspberry Pis, I designed a comprehensive containerization
@@ -386,10 +380,10 @@
             on an internal Janelia web server, allowing users to deploy any node
             type with a single command:
           </p>
-          <pre
-            class="project-section-content section-content"
-          ><code>curl -fsSL https://host.org/wormbot-install.sh | \
-  sudo DEVICE=camera_12 TYPE=camera bash</code></pre>
+          <pre class="project-section-content section-content">
+            <code>curl -fsSL https://host.org/wormbot-install.sh | \
+  sudo DEVICE=camera_12 TYPE=camera bash</code>
+          </pre>
           <p class="project-section-content section-content">
             The script handles the complete deployment workflow: validates
             inputs, pulls the latest image from Janelia's Docker registry,
@@ -469,74 +463,72 @@
             </li>
           </ul>
         </section>
+      </main>
+
+      <div id="contact" class="contact appear">
+        <img src="/assets/img/top_ripped_paper_dark.png" />
+        <section>
+          <div class="header-footer-inner-container">
+            <h2 class="section-header">Contact</h2>
+            <div class="section-content">
+              <p>
+                If you think I'm a good fit for an open position or you just
+                want to say hello, send a message! I look forward to hearing
+                from you.
+              </p>
+              <div class="icons-wrapper">
+                <a class="icon-item" href="mailto:amtruhlar@gmail.com">
+                  <div class="icon-container">
+                    <img
+                      src="../assets/icons/icons8-email-48.png"
+                      alt="Letter icon"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>Email</p>
+                </a>
+                <a
+                  class="icon-item"
+                  href="https://www.linkedin.com/in/allison-truhlar/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <div class="icon-container">
+                    <img
+                      src="../assets/icons/icons8-linkedin-48.png"
+                      alt="LinkedIn logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>LinkedIn</p>
+                </a>
+                <a
+                  class="icon-item"
+                  href="https://github.com/allison-truhlar"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <div class="icon-container">
+                    <img
+                      src="../assets/icons/icons8-github-48.png"
+                      alt="GitHub logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>GitHub</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <img src="/assets/img/bottom_ripped_paper_dark.png" />
       </div>
-    </main>
 
-    <div class="project-contact contact appear">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <polygon fill="#3F4E85" points="0,0 100,0 100,100" />
-      </svg>
-      <section class="display-container">
-        <h2 class="project-contact-header section-header">Contact</h2>
-
-        <p class="section-content">
-          If you think I'm a good fit for an open position or you just want to
-          say hello, send a message! I look forward to hearing from you.
-        </p>
-        <div class="icons-wrapper">
-          <a class="icon-item" href="mailto:amtruhlar@gmail.com">
-            <div class="icon-container">
-              <img
-                src="../assets/icons/icons8-email-48.png"
-                alt="Letter icon"
-                loading="lazy"
-              />
-            </div>
-            <p>Email</p>
-          </a>
-          <a
-            class="icon-item"
-            href="https://www.linkedin.com/in/allison-truhlar/"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="icon-container">
-              <img
-                src="../assets/icons/icons8-linkedin-48.png"
-                alt="LinkedIn logo"
-                loading="lazy"
-              />
-            </div>
-            <p>LinkedIn</p>
-          </a>
-          <a
-            class="icon-item"
-            href="https://github.com/allison-truhlar"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="icon-container">
-              <img
-                src="../assets/icons/icons8-github-48.png"
-                alt="GitHub logo"
-                loading="lazy"
-              />
-            </div>
-            <p>GitHub</p>
-          </a>
-        </div>
-      </section>
+      <footer>
+        <p>Built by Allison Truhlar | 2025</p>
+        <p>Icons by <a href="https://icons8.com">Icons8</a></p>
+      </footer>
     </div>
-
-    <footer>
-      <p>Built by Allison Truhlar | 2025</p>
-      <p>Icons by <a href="https://icons8.com">Icons8</a></p>
-    </footer>
-
     <script src="../index.js"></script>
   </body>
 </html>

@@ -712,6 +712,18 @@ footer a {
   margin-bottom: 1rem;
 }
 
+pre.project-section-content,
+pre.project-section-content > code {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 .project-section-content a {
   color: #fdf7eb;
   text-decoration: underline;
