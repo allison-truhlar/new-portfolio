@@ -42,12 +42,7 @@ const delayAppearCallback = function (entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("delay-inview");
-    } else if (
-      entry.isIntersecting &&
-      (entry.target.classList.contains("delay-inview") ||
-        entry.target.classList.contains("inview"))
-    ) {
-      entry.unobserve(entry.target);
+      delayHomeSectionsObserver.unobserve(entry.target);
     }
   });
 };
@@ -56,24 +51,19 @@ const appearCallback = function (entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("inview");
-    } else if (
-      entry.isIntersecting &&
-      (entry.target.classList.contains("delay-inview") ||
-        entry.target.classList.contains("inview"))
-    ) {
-      entry.unobserve(entry.target);
+      sectionsObserver.unobserve(entry.target);
     }
   });
 };
 
 const delayHomeSectionsObserver = new IntersectionObserver(delayAppearCallback);
 const sectionsObserver = new IntersectionObserver(appearCallback, {
-  threshold: 0.2,
+  threshold: 0.01,
 });
 
-const homeHero = document.querySelector(".home-hero");
+const hero = document.querySelector(".hero");
 
-if (homeHero) {
+if (hero) {
   const homeCallback = function (entries) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -85,8 +75,8 @@ if (homeHero) {
       }
     });
   };
-  const homeHeroObserver = new IntersectionObserver(homeCallback);
-  homeHeroObserver.observe(homeHero);
+  const heroObserver = new IntersectionObserver(homeCallback);
+  heroObserver.observe(hero);
 } else {
   appearItems.forEach((item) => sectionsObserver.observe(item));
 }
