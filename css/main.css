@@ -252,14 +252,12 @@ header {
 .hero {
   position: relative;
   margin: 0;
+  height: 315px;
+  width: 100vw;
 }
 
 .home-hero {
   display: flex;
-  margin: 0;
-  height: 315px;
-  width: 100vw;
-  position: relative;
 }
 
 .home-hero-img-container {
@@ -298,7 +296,7 @@ header {
 
 .home-hero-text-container {
   position: absolute;
-  top: 13%;
+  top: 30%;
   left: 7.5%;
   display: flex;
   flex-direction: column;
@@ -566,7 +564,7 @@ results in it being out of line with the headshot */
 }
 
 .contact > :last-child {
-  margin-top: -150px;
+  margin-top: -130px;
 }
 
 .contact section {
@@ -579,6 +577,9 @@ results in it being out of line with the headshot */
 .header-footer-inner-container {
   width: 85%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .contact .heading-white-underline {
@@ -646,53 +647,34 @@ footer a {
   flex-direction: column;
 }
 
-.project-hero {
-  padding-bottom: 2rem;
-  width: 100vw;
-}
-
 .hero-background {
   background-color: #fdf7eb;
   position: relative;
   z-index: 2;
 }
 
-.project-hero .hero-text {
+.hero .hero-text {
   font-weight: 700;
+  line-height: 1.1;
 }
 
-.project-hero ul {
-  list-style-type: "-";
-  margin: 0.5rem 0 0 0.5rem;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.project-hero li {
+.hero p {
   font-family: "Caveat", cursive;
   font-size: 1.5rem;
   line-height: 1.25;
   color: #4c5c96;
-  padding-left: 0.5rem;
 }
 
-.project-hero li span {
-  font-weight: 700;
-}
-
-.project-hero > :first-child {
+.hero > :first-child {
   margin-bottom: -60px;
 }
 
-.project-hero > :last-child {
+.hero > :last-child {
   margin-top: -60px;
 }
 
 .project-page-img {
   align-self: center;
-  margin-top: 3rem;
   width: 100%;
   border-radius: 5px;
 }
@@ -722,6 +704,12 @@ pre.project-section-content > code {
   white-space: pre-wrap;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+.project-section-content .custom-code {
+  font-family: monospace;
+  background-color: #6371a3;
+  padding: 1px 3px;
 }
 
 .project-section-content a {
@@ -758,12 +746,63 @@ code {
     width: 75%;
   }
 
+  .home-hero {
+    height: 375px;
+  }
+
+  .home-hero-text-container {
+    justify-items: center;
+    gap: 0.75rem;
+    width: auto;
+    top: 22%;
+    left: 12.5%;
+  }
+
+  .home-hero-text-container > :first-child {
+    align-self: center;
+    font-weight: 500;
+    font-size: 4rem;
+  }
+
+  .home-hero-text-container > :last-child {
+    align-self: flex-start;
+    font-size: 1.6rem;
+  }
+
+  .home-hero-img-container > :first-child {
+    margin-bottom: 0px;
+  }
+
+  .home-hero-img-container > :nth-child(2) {
+    position: absolute;
+    padding: 0;
+    width: 45%;
+    right: 12.5%;
+    top: 42%;
+  }
+
+  .home-hero-img-container > :last-child {
+    margin-top: -130px;
+  }
+
   .project-card {
     padding: 1.5rem;
   }
 
   .project-cards-wrapper {
     display: grid;
+  }
+
+  .contact {
+    margin-top: 0;
+  }
+
+  .contact > :first-child {
+    margin-bottom: -140px;
+  }
+
+  .contact > :last-child {
+    margin-top: -320px;
   }
 }
 

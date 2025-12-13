@@ -3,14 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <title>Mitoception - Allison Truhlar's Portfolio</title>
-    <meta name="description" content="A web app for analyzing mitochondria images using machine learning models developed at Janelia. Built with React Router, Python, and Docker." />
+    <meta
+      name="description"
+      content="A web app for analyzing mitochondria images using machine learning models developed at Janelia. Built with React Router, Python, and Docker."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <meta property="og:title" content="Mitoception - Allison Truhlar" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://allison-truhlar.github.io/projects/mitoception.html" />
-    <meta property="og:image" content="https://allison-truhlar.github.io/assets/img/Allison-Truhlar-headshot.png" />
-    <meta property="og:description" content="A web app for analyzing mitochondria images using machine learning models." />
+    <meta
+      property="og:url"
+      content="https://allison-truhlar.github.io/projects/mitoception.html"
+    />
+    <meta
+      property="og:image"
+      content="https://allison-truhlar.github.io/assets/img/Allison-Truhlar-headshot.png"
+    />
+    <meta
+      property="og:description"
+      content="A web app for analyzing mitochondria images using machine learning models."
+    />
 
     <link rel="manifest" href="site.webmanifest" />
     <!-- <link rel="apple-touch-icon" href="icon.png"> -->
@@ -30,7 +42,7 @@
     <meta name="theme-color" content="#fafafa" />
   </head>
 
-<body>
+  <body>
     <div class="display-container">
       <header class="header">
         <nav class="nav-bar">
@@ -68,7 +80,7 @@
         </nav>
       </header>
 
-      <section class="project-hero hero">
+      <section class="hero">
         <img
           class="home-hero-img"
           src="/assets/img/top_ripped_paper_beige.png"
@@ -76,15 +88,9 @@
         <div class="hero-background">
           <div class="header-footer-inner-container">
             <h1 class="hero-text">Mitoception</h1>
-            <ul>
-              <li>
-                <span>Goal:</span> Analyze images using an ML model on the client or server
-              </li>
-              <li><span>Role:</span> Full Stack Developer</li>
-              <li>
-                <span>Technologies:</span> React, Python, FastAPI, Docker
-              </li>
-            </ul>
+            <p>
+              UI to analyze images using an ML model on the client or server
+            </p>
           </div>
         </div>
         <img
@@ -94,14 +100,14 @@
       </section>
 
       <main class="flex">
-        <div class="project-page-img appear">
-          <!-- <img
+        <!-- <div class="project-page-img"> -->
+        <!-- <img
             src="../assets/img/mitoception.png"
             alt="Screenshot of Mitoception's interface showing the file upload panel and results grid displaying analyzed mitochondria images with probability scores and color overlay visualization."
           /> -->
-        </div>
+        <!-- </div> -->
 
-        <section class="appear">
+        <section>
           <h2 class="project-section-header section-header">
             Purpose and Goal
           </h2>
@@ -146,13 +152,13 @@
           <p class="project-section-content section-content">
             The solution required careful coordination between React hooks and
             the ONNX Runtime Web initialization sequence. I used a
-            <code>useEffect</code> hook to trigger model retrieval and inference
-            session creation when users navigate to the analysis page, storing
-            the session in React state for reuse across multiple image analyses.
-            To handle the case where users might submit images before the model
-            finishes loading, I implemented a file queuing system that holds
-            uploaded files in state and automatically processes them once the
-            inference session is ready.
+            <span class="custom-code">useEffect</span> hook to trigger model
+            retrieval and inference session creation when users navigate to the
+            analysis page, storing the session in React state for reuse across
+            multiple image analyses. To handle the case where users might submit
+            images before the model finishes loading, I implemented a file
+            queuing system that holds uploaded files in state and automatically
+            processes them once the inference session is ready.
           </p>
         </section>
 
@@ -178,16 +184,20 @@
             approach that didn't match these requirements.
           </p>
           <p class="project-section-content section-content">
-            I modified the <code>imageDataToTensor</code> function in
-            <code>imageHelper.ts</code> to apply the correct channel-specific
-            normalization. For each pixel, I converted the RGB values from 0-255
-            to 0-1 range, then applied the ImageNet normalization formula:
-            <code>(pixel_value / 255.0 - mean) / std_dev</code> for each
-            channel. This required restructuring the tensor layout to organize
-            pixel data by channel rather than by pixel, ensuring the normalized
-            values aligned with the model's expectations. After implementing
-            these changes, the ONNX model outputs matched the PyTorch
-            implementation exactly.
+            I modified the
+            <span class="custom-code">imageDataToTensor</span> function in
+            <span class="custom-code">imageHelper.ts</span> to apply the correct
+            channel-specific normalization. For each pixel, I converted the RGB
+            values from 0-255 to 0-1 range, then applied the ImageNet
+            normalization formula:
+            <span class="custom-code"
+              >(pixel_value / 255.0 - mean) / std_dev</span
+            >
+            for each channel. This required restructuring the tensor layout to
+            organize pixel data by channel rather than by pixel, ensuring the
+            normalized values aligned with the model's expectations. After
+            implementing these changes, the ONNX model outputs matched the
+            PyTorch implementation exactly.
           </p>
         </section>
 
@@ -201,9 +211,9 @@
             overlays and downloadable CSV files for further analysis.
           </p>
         </section>
-    </main>
+      </main>
 
-   <div id="contact" class="contact appear">
+      <div id="contact" class="contact appear">
         <img src="/assets/img/top_ripped_paper_dark.png" />
         <section>
           <div class="header-footer-inner-container">
@@ -262,11 +272,11 @@
         <img src="/assets/img/bottom_ripped_paper_dark.png" />
       </div>
 
-    <footer>
-      <p>Built by Allison Truhlar | 2025</p>
-      <p>Icons by <a href="https://icons8.com">Icons8</a></p>
-    </footer>
-
+      <footer>
+        <p>Built by Allison Truhlar | 2025</p>
+        <p>Icons by <a href="https://icons8.com">Icons8</a></p>
+      </footer>
+    </div>
     <script src="../index.js"></script>
   </body>
 </html>
