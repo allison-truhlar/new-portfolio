@@ -266,6 +266,7 @@ header {
 .hero-img-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .hero-img-container > :nth-child(2) {
@@ -912,24 +913,36 @@ code {
 
 /* Laptops, 1024px and larger */
 @media (min-width: 1024px) {
-  .display-container {
+  .display-container,
+  .header-footer-inner-container {
     width: 65%;
   }
 
+  .hero.project-hero {
+    height: 400px;
+  }
+
   .home-hero.hero-img-container > :last-child {
-    margin-top: -250px;
+    margin-top: -200px;
+  }
+
+  .home-hero.hero-img-container > :nth-child(2) {
+    width: 40%;
+    right: 17.5%;
+    top: 40%;
+  }
+
+  .home-hero-text-container {
+    top: 18%;
+    left: 17.5%;
   }
 
   .home-hero-text-container {
     top: 25%;
   }
 
-  .home-hero-text-container > :first-child {
-    font-size: 4.25rem;
-  }
-
   .home-hero-text-container > :last-child {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .contact > :first-child {
@@ -939,11 +952,73 @@ code {
   .contact > :last-child {
     margin-top: -400px;
   }
+
+  .hero.project-hero > :first-child {
+    margin-bottom: -180px;
+  }
+
+  .hero.project-hero > :last-child {
+    margin-top: -180px;
+  }
 }
 
 /* Desktops, 1290px and larger */
 @media (min-width: 1290px) {
-  .display-container {
+  .display-container,
+  .header-footer-inner-container {
     width: 60%;
+  }
+
+  .hero.home-hero {
+    height: 550px;
+  }
+
+  .home-hero.hero-img-container > :nth-child(2) {
+    right: 20%;
+    top: 45%;
+  }
+
+  .home-hero-text-container {
+    left: 20%;
+  }
+
+  .home-hero-text-container > :first-child {
+    font-size: 4.25rem;
+  }
+
+  .home-hero-text-container > :last-child {
+    font-size: 1.8rem;
+  }
+
+  .contact > :first-child {
+    margin-bottom: -300px;
+  }
+
+  .contact > :last-child {
+    margin-top: -550px;
+  }
+
+  .hero.project-hero {
+    position: relative;
+    height: 550px;
+  }
+
+  .hero-text {
+    font-size: 2.5rem;
+  }
+
+  .hero.project-hero .hero-background {
+    position: absolute;
+    width: 100%;
+    top: 38%;
+    left: 0;
+  }
+
+  .hero.project-hero > :first-child {
+    margin-bottom: -200px;
+  }
+
+  .hero.project-hero > :last-child {
+    margin-top: -380px;
   }
 }
