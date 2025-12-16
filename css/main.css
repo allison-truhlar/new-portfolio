@@ -798,11 +798,11 @@ code {
     height: 320px;
   }
 
-  .hero.project-hero > :first-child {
+  .hero.project-hero > .hero-top {
     margin-bottom: -120px;
   }
 
-  .hero.project-hero > :last-child {
+  .hero.project-hero > .hero-bottom {
     margin-top: -120px;
   }
 
@@ -868,11 +868,11 @@ code {
     margin-bottom: 5rem;
   }
 
-  .hero.project-hero > :first-child {
+  .hero.project-hero > .hero-top {
     margin-bottom: -150px;
   }
 
-  .hero.project-hero > :last-child {
+  .hero.project-hero > .hero-bottom {
     margin-top: -150px;
   }
 
@@ -953,11 +953,11 @@ code {
     margin-top: -400px;
   }
 
-  .hero.project-hero > :first-child {
+  .hero.project-hero > .hero-top {
     margin-bottom: -180px;
   }
 
-  .hero.project-hero > :last-child {
+  .hero.project-hero > .hero-bottom {
     margin-top: -180px;
   }
 }
@@ -1014,11 +1014,11 @@ code {
     left: 0;
   }
 
-  .hero.project-hero > :first-child {
+  .hero.project-hero > .hero-top {
     margin-bottom: -200px;
   }
 
-  .hero.project-hero > :last-child {
+  .hero.project-hero > .hero-bottom {
     margin-top: -380px;
   }
 }

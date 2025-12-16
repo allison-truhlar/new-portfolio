@@ -81,7 +81,13 @@
       </header>
 
       <section class="hero project-hero">
-        <img class="hero-img" src="/assets/img/top_ripped_paper_beige.png" />
+        <picture class="hero-img hero-top">
+          <source
+            srcset="/assets/img/top_ripped_paper_beige_large.png"
+            media="(min-width: 1024px)"
+          />
+          <img class="hero-img" src="/assets/img/top_ripped_paper_beige.png" />
+        </picture>
         <div class="hero-background">
           <div class="header-footer-inner-container">
             <h1 class="hero-text">Mitoception</h1>
@@ -90,7 +96,16 @@
             </p>
           </div>
         </div>
-        <img class="hero-img" src="/assets/img/bottom_ripped_paper_beige.png" />
+        <picture>
+          <source
+            srcset="/assets/img/bottom_ripped_paper_beige_large.png"
+            media="(min-width: 1024px)"
+          />
+          <img
+            class="hero-img hero-bottom"
+            src="/assets/img/bottom_ripped_paper_beige.png"
+          />
+        </picture>
       </section>
 
       <main class="flex">
