@@ -49,7 +49,17 @@
           <ul class="nav-bar-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../index.html/#about">About</a></li>
-            <li><a href="../index.html/#projects">Projects</a></li>
+            <li class="has-submenu">
+              <a href="../index.html/#projects" aria-haspopup="true" aria-expanded="false">
+                Projects
+              </a>
+              <ul class="submenu" role="menu">
+                <li role="none"><a href="/projects/ossi-website.html" role="menuitem">OSSI Website</a></li>
+                <li role="none"><a href="/projects/fileglancer.html" role="menuitem">Fileglancer</a></li>
+                <li role="none"><a href="/projects/wormbot.html" role="menuitem">Wormbot</a></li>
+                <li role="none"><a href="/projects/mitoception.html" role="menuitem">Mitoception</a></li>
+              </ul>
+            </li>
             <li><a href="../index.html/#contact">Contact</a></li>
             <li class="resume">
               <a href="../assets/Allison Truhlar Resume.pdf" target="_blank"
@@ -69,7 +79,17 @@
           <ul class="nav-dropdown-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../index.html/#about">About</a></li>
-            <li><a href="../index.html/#projects">Projects</a></li>
+            <li class="has-submenu">
+              <a href="../index.html/#projects" aria-haspopup="true" aria-expanded="false">
+                Projects
+              </a>
+              <ul class="submenu" role="menu">
+                <li role="none"><a href="/projects/ossi-website.html" role="menuitem">OSSI Website</a></li>
+                <li role="none"><a href="/projects/fileglancer.html" role="menuitem">Fileglancer</a></li>
+                <li role="none"><a href="/projects/wormbot.html" role="menuitem">Wormbot</a></li>
+                <li role="none"><a href="/projects/mitoception.html" role="menuitem">Mitoception</a></li>
+              </ul>
+            </li>
             <li><a href="../index.html/#contact">Contact</a></li>
             <li class="resume">
               <a href="../assets/Allison Truhlar Resume.pdf" target="_blank"
@@ -119,20 +139,21 @@
             Purpose and Goal
           </h2>
           <p class="project-section-content section-content">
-            Mitoception is a web application that provides a user interface for
-            a machine learning model developed by Haining Zhang in the Meng Wang
-            lab at Howard Hughes Medical Institute's Janelia Research Campus.
-            The application enables researchers to upload <em>C. elegans</em>
-            mitochondria images and receive automated classifications.
+            Mitoception is a web interface for image analysis using a machine
+            learning model developed at Howard Hughes Medical Institute's
+            Janelia Research Campus (Janelia). Researchers upload mitochondria
+            images and receive back predicted classifications for the
+            mitochondria structure.
           </p>
           <p class="project-section-content section-content">
             My first implementation of the application used a FastAPI backend
             with PyTorch to perform inference on uploaded images. The new
             architecture gives the user the choice of using the server-based
             inference, or running inference entirely in the browser using
-            WebAssembly, eliminating concerns external users might have of
-            submitting their data to Janelia servers and reducing latency when
-            there are many application users, while maintaining model accuracy.
+            WebAssembly. This achieves two goals: (1) minimizing concerns
+            external users might have of submitting their data to Janelia
+            servers and (2) reducing latency when there are many application
+            users.
           </p>
         </section>
 
@@ -142,10 +163,10 @@
           </h2>
           <p class="project-section-content section-content">
             One of the primary challenges in migrating to client-side inference
-            was managing the 28MB ONNX model file. Intially, the file was
-            downloaded on every page refresh, resulting in delays of several
-            seconds to over a minute depending on network conditions. This
-            created an unacceptable user experience.
+            was managing the 28MB model file. Intially, the file was downloaded
+            on every page refresh, resulting in delays of several seconds to
+            over a minute depending on network conditions. This created an
+            unacceptable user experience.
           </p>
           <p class="project-section-content section-content">
             I implemented a caching solution using the browser's IndexedDB API
@@ -158,53 +179,18 @@
           </p>
           <p class="project-section-content section-content">
             The solution required careful coordination between React hooks and
-            the ONNX Runtime Web initialization sequence. I used a
-            <span class="custom-code">useEffect</span> hook to trigger model
-            retrieval and inference session creation when users navigate to the
-            analysis page, storing the session in React state for reuse across
-            multiple image analyses. To handle the case where users might submit
-            images before the model finishes loading, I implemented a file
-            queuing system that holds uploaded files in state and automatically
-            processes them once the inference session is ready.
-          </p>
-        </section>
-
-        <section class="appear">
-          <h2 class="project-section-header section-header">
-            Spotlight: Troubleshooting tensor preprocessing for ResNet models
-          </h2>
-          <p class="project-section-content section-content">
-            A critical challenge emerged during testing when the ONNX model
-            produced different results than the original PyTorch implementation
-            for identical input images. After extensive debugging, I discovered
-            the issue was in the image preprocessing pipeline—specifically, the
-            normalization step that converts pixel values into the tensor format
-            expected by the ResNet architecture.
-          </p>
-          <p class="project-section-content section-content">
-            The ResNet model family expects input images to be normalized using
-            specific mean and standard deviation values for each RGB channel:
-            mean values of [0.485, 0.456, 0.406] and standard deviations of
-            [0.229, 0.224, 0.225]. These values were derived from ImageNet
-            statistics and are critical for proper model performance. The
-            tutorial code I started from used a simplified normalization
-            approach that didn't match these requirements.
-          </p>
-          <p class="project-section-content section-content">
-            I modified the
-            <span class="custom-code">imageDataToTensor</span> function in
-            <span class="custom-code">imageHelper.ts</span> to apply the correct
-            channel-specific normalization. For each pixel, I converted the RGB
-            values from 0-255 to 0-1 range, then applied the ImageNet
-            normalization formula:
-            <span class="custom-code"
-              >(pixel_value / 255.0 - mean) / std_dev</span
-            >
-            for each channel. This required restructuring the tensor layout to
-            organize pixel data by channel rather than by pixel, ensuring the
-            normalized values aligned with the model's expectations. After
-            implementing these changes, the ONNX model outputs matched the
-            PyTorch implementation exactly.
+            the WebAssembly runtime initialization sequence. I used a
+            <span class="custom-code">useEffect</span> hook to trigger the model
+            download and initialize the inference session when users first
+            navigate to the analysis page. This also served to reduce the
+            apparent latency because users needed time to select images, filling
+            some to all of the time required for the initial download. Once
+            initialized, I stored the inference session in React state for reuse
+            across all subsequent analysis sessions. To handle the case where
+            users might submit images before the model finished loading, I
+            implemented a file queuing system that holds uploaded files in state
+            and automatically processes them once the inference session is
+            ready.
           </p>
         </section>
 
