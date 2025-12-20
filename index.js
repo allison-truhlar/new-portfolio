@@ -80,3 +80,18 @@ if (hero) {
 } else {
   appearItems.forEach((item) => sectionsObserver.observe(item));
 }
+
+// Desktop only - toggle aria-expanded on hover for screen readers
+if (window.innerWidth >= 768) {
+  const projectsLink = document.querySelector('.nav-bar .has-submenu > a');
+
+  if (projectsLink) {
+    projectsLink.parentElement.addEventListener('mouseenter', () => {
+      projectsLink.setAttribute('aria-expanded', 'true');
+    });
+
+    projectsLink.parentElement.addEventListener('mouseleave', () => {
+      projectsLink.setAttribute('aria-expanded', 'false');
+    });
+  }
+}
