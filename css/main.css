@@ -215,6 +215,7 @@ header {
 
 .has-submenu {
   position: relative;
+  text-align: right;
 }
 
 .submenu {
@@ -224,8 +225,8 @@ header {
   left: 0;
   background-color: #2e3141;
   border-radius: 5px;
-  padding: 0.5rem 0;
-  min-width: 200px;
+  padding: 0.5rem 0 0 0;
+  min-width: fit-content;
   list-style: none;
   margin: 0;
   z-index: 1000;
@@ -237,7 +238,6 @@ header {
   position: static;
   background-color: transparent;
   padding-left: 1rem;
-  margin-top: 0.5rem;
   min-width: auto;
 }
 
