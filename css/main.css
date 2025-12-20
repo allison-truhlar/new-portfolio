@@ -867,6 +867,25 @@ code {
     padding-block: 0.5rem;
   }
 
+  .nav-bar .has-submenu:hover .submenu,
+  .nav-bar .has-submenu:focus-within .submenu {
+    display: block;
+  }
+
+  .submenu li {
+    padding: 0;
+  }
+
+  .submenu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+  }
+
+  .submenu a:hover {
+    background-color: rgba(99, 113, 163, 0.3);
+  }
+
   .home-hero > .hero-top {
     margin-bottom: -125px;
   }
