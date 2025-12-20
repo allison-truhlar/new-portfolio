@@ -95,3 +95,61 @@ if (window.innerWidth >= 768) {
     });
   }
 }
+
+// Debug: Log CSS variables and font information
+console.log('=== DEBUG INFO ===');
+console.log('Viewport width:', window.innerWidth);
+console.log('Viewport height:', window.innerHeight);
+console.log('Device pixel ratio:', window.devicePixelRatio);
+
+const rootStyles = getComputedStyle(document.documentElement);
+console.log('CSS Variables:');
+console.log('  --project-hero-overlap-top:', rootStyles.getPropertyValue('--project-hero-overlap-top').trim());
+console.log('  --project-hero-overlap-bottom:', rootStyles.getPropertyValue('--project-hero-overlap-bottom').trim());
+console.log('  --home-hero-overlap-top:', rootStyles.getPropertyValue('--home-hero-overlap-top').trim());
+console.log('  --home-hero-overlap-bottom:', rootStyles.getPropertyValue('--home-hero-overlap-bottom').trim());
+
+const htmlStyles = getComputedStyle(document.documentElement);
+console.log('Root font-size:', htmlStyles.fontSize);
+
+// Check if project hero exists
+const projectHero = document.querySelector('.project-hero');
+if (projectHero) {
+  const heroTop = projectHero.querySelector('.hero-top');
+  const heroBottom = projectHero.querySelector('.hero-bottom');
+
+  if (heroTop) {
+    const heroTopStyles = getComputedStyle(heroTop);
+    console.log('Project hero-top margin-bottom:', heroTopStyles.marginBottom);
+  }
+
+  if (heroBottom) {
+    const heroBottomStyles = getComputedStyle(heroBottom);
+    console.log('Project hero-bottom margin-top:', heroBottomStyles.marginTop);
+  }
+}
+
+// Check if home hero exists
+const homeHero = document.querySelector('.home-hero');
+if (homeHero) {
+  const heroTop = homeHero.querySelector('.hero-top');
+  const heroBottom = homeHero.querySelector('.hero-bottom');
+
+  if (heroTop) {
+    const heroTopStyles = getComputedStyle(heroTop);
+    console.log('Home hero-top margin-bottom:', heroTopStyles.marginBottom);
+  }
+
+  if (heroBottom) {
+    const heroBottomStyles = getComputedStyle(heroBottom);
+    console.log('Home hero-bottom margin-top:', heroBottomStyles.marginTop);
+  }
+}
+
+// Check font loading
+document.fonts.ready.then(() => {
+  console.log('Fonts loaded:', document.fonts.size);
+  document.fonts.forEach((font) => {
+    console.log(`  - ${font.family} ${font.weight} ${font.style}`);
+  });
+});
