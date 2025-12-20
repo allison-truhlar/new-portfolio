@@ -231,6 +231,25 @@ header {
   z-index: 1000;
 }
 
+/* Mobile: submenu always visible in nav-dropdown */
+.nav-dropdown .submenu {
+  display: block;
+  position: static;
+  background-color: transparent;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  min-width: auto;
+}
+
+.nav-dropdown .submenu li {
+  padding: 0.25rem 0;
+}
+
+.nav-dropdown .submenu a {
+  font-size: 0.85rem;
+  text-transform: none;
+}
+
 .menu-btn {
   display: flex;
   flex-direction: column;
