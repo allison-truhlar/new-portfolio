@@ -49,7 +49,17 @@
           <ul class="nav-bar-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../index.html/#about">About</a></li>
-            <li><a href="../index.html/#projects">Projects</a></li>
+            <li class="has-submenu">
+              <a href="../index.html/#projects" aria-haspopup="true" aria-expanded="false">
+                Projects
+              </a>
+              <ul class="submenu" role="menu">
+                <li role="none"><a href="/projects/ossi-website.html" role="menuitem">OSSI Website</a></li>
+                <li role="none"><a href="/projects/fileglancer.html" role="menuitem">Fileglancer</a></li>
+                <li role="none"><a href="/projects/wormbot.html" role="menuitem">Wormbot</a></li>
+                <li role="none"><a href="/projects/mitoception.html" role="menuitem">Mitoception</a></li>
+              </ul>
+            </li>
             <li><a href="../index.html/#contact">Contact</a></li>
             <li class="resume">
               <a href="../assets/Allison Truhlar Resume.pdf" target="_blank"
@@ -69,7 +79,17 @@
           <ul class="nav-dropdown-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../index.html/#about">About</a></li>
-            <li><a href="../index.html/#projects">Projects</a></li>
+            <li class="has-submenu">
+              <a href="../index.html/#projects" aria-haspopup="true" aria-expanded="false">
+                Projects
+              </a>
+              <ul class="submenu" role="menu">
+                <li role="none"><a href="/projects/ossi-website.html" role="menuitem">OSSI Website</a></li>
+                <li role="none"><a href="/projects/fileglancer.html" role="menuitem">Fileglancer</a></li>
+                <li role="none"><a href="/projects/wormbot.html" role="menuitem">Wormbot</a></li>
+                <li role="none"><a href="/projects/mitoception.html" role="menuitem">Mitoception</a></li>
+              </ul>
+            </li>
             <li><a href="../index.html/#contact">Contact</a></li>
             <li class="resume">
               <a href="../assets/Allison Truhlar Resume.pdf" target="_blank"
@@ -199,25 +219,6 @@
             action returns a message to the pull request with the invalid tags
             and in which files they were found. The developer can then push
             changes to the pull request prior to it being accepted for merging.
-          </p>
-          <p class="project-section-content section-content">
-            I accessed the Recipe Schema Markup through two steps: first, using
-            Axios to fetch the HTML document for the URL provided by the user.
-            Then, I used a package called Cheerio to parse the document,
-            returning only the Recipe Schema Markup, which is contaned within a
-            script tag of
-            <code>type="application/ld+json"</code>. JSON-LD is the format for
-            schema markup preferred by Google.
-          </p>
-          <p class="project-section-content section-content">
-            Once I extracted the Recipe Schema Markup from the HTML document,
-            since the format is JSON-LD, I could parse it with JSON.parse() and
-            then access the data as I would for any other JSON data. I first
-            found the object that contained the recipe data I was interested in,
-            and then used key names to access the values of different properties
-            (e.g., ingredients, instructions) in the object. These data could
-            then be added to the app database as a recipe, just like the
-            manually inputted recipe data.
           </p>
         </section>
 
