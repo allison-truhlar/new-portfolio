@@ -705,7 +705,7 @@ footer a {
 
 .project-hero p {
   font-family: "Caveat", cursive;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 1.25;
   color: #4c5c96;
 }
@@ -934,6 +934,14 @@ code {
   .project-link-text {
     font-size: 0.7rem;
   }
+
+  .project-hero .hero-text {
+    font-size: 2.5rem;
+  }
+
+  .project-hero p {
+    font-size: 1.75rem;
+  }
 }
 
 /* Laptops, 1024px and larger */
@@ -959,6 +967,8 @@ code {
     --container-width: 50%;
     --home-hero-overlap-top: -125px;
     --home-hero-overlap-bottom: -125px;
+    --project-hero-overlap-top: -120px;
+    --project-hero-overlap-bottom: -120px;
     --contact-overlap-top: -300px;
     --contact-overlap-bottom: -550px;
   }
@@ -971,19 +981,7 @@ code {
     font-size: 1.8rem;
   }
 
-  .hero.project-hero {
-    position: relative;
-    height: 550px;
-  }
-
   .hero-text {
     font-size: 2.5rem;
-  }
-
-  .hero.project-hero .hero-background {
-    position: absolute;
-    width: 100%;
-    top: 38%;
-    left: 0;
   }
 }
