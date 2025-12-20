@@ -882,7 +882,8 @@ code {
     white-space: nowrap;
   }
 
-  .submenu a:hover {
+  .submenu a:hover,
+  .submenu a:focus {
     background-color: rgba(99, 113, 163, 0.3);
   }
 
