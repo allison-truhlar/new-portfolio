@@ -49,7 +49,17 @@
           <ul class="nav-bar-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../index.html/#about">About</a></li>
-            <li><a href="../index.html/#projects">Projects</a></li>
+            <li class="has-submenu">
+              <a href="../index.html/#projects" aria-haspopup="true" aria-expanded="false">
+                Projects
+              </a>
+              <ul class="submenu" role="menu">
+                <li role="none"><a href="/projects/ossi-website.html" role="menuitem">OSSI Website</a></li>
+                <li role="none"><a href="/projects/fileglancer.html" role="menuitem">Fileglancer</a></li>
+                <li role="none"><a href="/projects/wormbot.html" role="menuitem">Wormbot</a></li>
+                <li role="none"><a href="/projects/mitoception.html" role="menuitem">Mitoception</a></li>
+              </ul>
+            </li>
             <li><a href="../index.html/#contact">Contact</a></li>
             <li class="resume">
               <a href="../assets/Allison Truhlar Resume.pdf" target="_blank"
@@ -69,7 +79,17 @@
           <ul class="nav-dropdown-link-container nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../index.html/#about">About</a></li>
-            <li><a href="../index.html/#projects">Projects</a></li>
+            <li class="has-submenu">
+              <a href="../index.html/#projects" aria-haspopup="true" aria-expanded="false">
+                Projects
+              </a>
+              <ul class="submenu" role="menu">
+                <li role="none"><a href="/projects/ossi-website.html" role="menuitem">OSSI Website</a></li>
+                <li role="none"><a href="/projects/fileglancer.html" role="menuitem">Fileglancer</a></li>
+                <li role="none"><a href="/projects/wormbot.html" role="menuitem">Wormbot</a></li>
+                <li role="none"><a href="/projects/mitoception.html" role="menuitem">Mitoception</a></li>
+              </ul>
+            </li>
             <li><a href="../index.html/#contact">Contact</a></li>
             <li class="resume">
               <a href="../assets/Allison Truhlar Resume.pdf" target="_blank"
@@ -151,12 +171,11 @@
           </h2>
           <p class="project-section-content section-content">
             Fileglancer is a web application that connects to internal file
-            systems at Janelia Research Campus, designed to reduce friction and
-            activation energy when researchers need to share large imaging
-            datasets with colleagues. Rather than requiring data migration,
-            Fileglancer allows users to keep their data on existing network file
-            systems while providing modern web-based tools for browsing,
-            sharing, and visualization.
+            systems at Janelia Research Campus (Janelia). It is designed to
+            reduce friction and activation energy when researchers need to share
+            large imaging datasets with colleagues. Fileglancer allows users to
+            keep their data on existing network file systems and use web-based
+            tools for browsing, sharing, and visualization.
           </p>
           <p class="project-section-content section-content">
             My role on this project was implementing all features on the
@@ -188,12 +207,11 @@
             server is already running. I solved this by moving file creation
             into
             <code>playwright.config.js</code>, where I create the temporary
-            directories, populate them with test data including minimal Zarr and
-            OME-Zarr data structures, and then pass their paths to the server
-            via the <code>FGC_FILE_SHARE_MOUNTS</code> environment variable.
-            This ensures the server sees the test files when it initializes,
-            enabling true end-to-end testing of file browsing, creation,
-            deletion, and data link operations.
+            directories, populate them with test data including minimal
+            scientific imaging data structures, and then pass their paths to the
+            server via and environment variable. This ensures the server sees
+            the test files when it initializes, enabling true end-to-end testing
+            of file browsing, creation, deletion, and data link operations.
           </p>
 
           <h3 class="project-subheader">
